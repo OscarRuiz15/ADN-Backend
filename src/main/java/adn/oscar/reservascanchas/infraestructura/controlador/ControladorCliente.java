@@ -19,8 +19,8 @@ public class ControladorCliente {
     }
 
     @PostMapping
-    public void agregar(@RequestBody ComandoCliente comandoCliente) {
-        this.manejadorCrearCliente.ejecutar(comandoCliente);
+    public Cliente agregar(@RequestBody ComandoCliente comandoCliente) {
+        return this.manejadorCrearCliente.ejecutar(comandoCliente);
     }
 
     @GetMapping("/{cedula}")

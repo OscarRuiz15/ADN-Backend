@@ -4,9 +4,11 @@ import adn.oscar.reservascanchas.aplicacion.comando.ComandoCancha;
 import adn.oscar.reservascanchas.aplicacion.fabrica.FabricaCancha;
 import adn.oscar.reservascanchas.dominio.Cancha;
 import adn.oscar.reservascanchas.dominio.servicio.cancha.ServicioCrearCancha;
+import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
 
+@Component
 public class ManejadorCrearCancha {
 
     private final ServicioCrearCancha servicioCrearCancha;
@@ -18,8 +20,8 @@ public class ManejadorCrearCancha {
     }
 
     @Transactional
-    public void ejecutar(ComandoCancha comandoCancha) {
+    public Cancha ejecutar(ComandoCancha comandoCancha) {
         Cancha cancha = this.fabricaCancha.crearCancha(comandoCancha);
-        this.servicioCrearCancha.ejecutar(cancha);
+        return this.servicioCrearCancha.ejecutar(cancha);
     }
 }

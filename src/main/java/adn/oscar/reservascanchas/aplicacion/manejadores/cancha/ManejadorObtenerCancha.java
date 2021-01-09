@@ -2,9 +2,11 @@ package adn.oscar.reservascanchas.aplicacion.manejadores.cancha;
 
 import adn.oscar.reservascanchas.dominio.Cancha;
 import adn.oscar.reservascanchas.dominio.servicio.cancha.ServicioObtenerCancha;
+import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
 
+@Component
 public class ManejadorObtenerCancha {
 
     private final ServicioObtenerCancha servicioObtenerCancha;

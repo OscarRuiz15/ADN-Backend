@@ -16,6 +16,7 @@ public interface RepositorioCliente {
      * Agregar un registro cliente al repositorio
      *
      * @param cliente
+     * @return Cliente
      */
-    void agregar(Cliente cliente);
+    Cliente agregar(Cliente cliente);
 }

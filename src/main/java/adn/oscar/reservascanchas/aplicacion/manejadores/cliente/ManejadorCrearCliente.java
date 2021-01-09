@@ -4,9 +4,11 @@ import adn.oscar.reservascanchas.aplicacion.comando.ComandoCliente;
 import adn.oscar.reservascanchas.aplicacion.fabrica.FabricaCliente;
 import adn.oscar.reservascanchas.dominio.Cliente;
 import adn.oscar.reservascanchas.dominio.servicio.cliente.ServicioCrearCliente;
+import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
 
+@Component
 public class ManejadorCrearCliente {
 
     private final ServicioCrearCliente servicioCrearCliente;
@@ -18,8 +20,8 @@ public class ManejadorCrearCliente {
     }
 
     @Transactional
-    public void ejecutar(ComandoCliente comandoCliente) {
+    public Cliente ejecutar(ComandoCliente comandoCliente) {
         Cliente cliente = this.fabricaCliente.crearCliente(comandoCliente);
-        this.servicioCrearCliente.ejecutar(cliente);
+        return this.servicioCrearCliente.ejecutar(cliente);
     }
 }

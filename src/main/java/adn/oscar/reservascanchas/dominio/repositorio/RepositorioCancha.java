@@ -16,6 +16,7 @@ public interface RepositorioCancha {
      * Agregar un registro cancha al repositorio
      *
      * @param cancha
+     * @return Cancha
      */
-    void agregar(Cancha cancha);
+    Cancha agregar(Cancha cancha);
 }

@@ -2,9 +2,11 @@ package adn.oscar.reservascanchas.aplicacion.manejadores.cliente;
 
 import adn.oscar.reservascanchas.dominio.Cliente;
 import adn.oscar.reservascanchas.dominio.servicio.cliente.ServicioObtenerCliente;
+import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
 
+@Component
 public class ManejadorObtenerCliente {
 
     private final ServicioObtenerCliente servicioObtenerCliente;

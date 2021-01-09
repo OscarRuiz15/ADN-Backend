@@ -2,9 +2,8 @@ package adn.oscar.reservascanchas.dominio.servicio.cliente;
 
 import adn.oscar.reservascanchas.dominio.Cliente;
 import adn.oscar.reservascanchas.dominio.repositorio.RepositorioCliente;
-import org.springframework.stereotype.Component;
 
-@Component
+
 public class ServicioCrearCliente {
 
     private final RepositorioCliente repositorioCliente;
@@ -13,7 +12,7 @@ public class ServicioCrearCliente {
         this.repositorioCliente = repositorioCliente;
     }
 
-    public void ejecutar(Cliente cliente) {
-        this.repositorioCliente.agregar(cliente);
+    public Cliente ejecutar(Cliente cliente) {
+        return this.repositorioCliente.agregar(cliente);
     }
 }

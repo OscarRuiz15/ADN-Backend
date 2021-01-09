@@ -19,8 +19,8 @@ public class ControladorCancha {
     }
 
     @PostMapping
-    public void agregar(@RequestBody ComandoCancha comandoCancha) {
-        this.manejadorCrearCancha.ejecutar(comandoCancha);
+    public Cancha agregar(@RequestBody ComandoCancha comandoCancha) {
+        return this.manejadorCrearCancha.ejecutar(comandoCancha);
     }
 
     @GetMapping("/{codigo}")

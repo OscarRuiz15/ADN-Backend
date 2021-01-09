@@ -1,9 +1,7 @@
 package adn.oscar.reservascanchas.dominio;
 
 import adn.oscar.reservascanchas.dominio.excepcion.ClienteException;
-import lombok.Getter;
 
-@Getter
 public class Cliente {
 
     public static final String EL_NOMBRE_DEL_CLIENTE_NO_PUEDE_ESTAR_VACIO = "El nombre del cliente no puede estar vacio.";
@@ -24,6 +22,22 @@ public class Cliente {
         this.email = email;
         this.telefono = telefono;
         this.cedula = cedula;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getCedula() {
+        return cedula;
     }
 
     private void validarObligatorio(Object valor, String error) {
