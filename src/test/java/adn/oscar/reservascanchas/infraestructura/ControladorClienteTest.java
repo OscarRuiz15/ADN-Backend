@@ -39,10 +39,10 @@ public class ControladorClienteTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.nombre").value("Oscar Alexander Ruiz Palacio"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.correo").value("oarp1996@gmail.com"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.telefono").value("3158895616"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.cedula").value("1115087378"));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.nombre").value(comandoCliente.getNombre()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.correo").value(comandoCliente.getCorreo()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.telefono").value(comandoCliente.getTelefono()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.cedula").value(comandoCliente.getCedula()));
     }
 
     @Test

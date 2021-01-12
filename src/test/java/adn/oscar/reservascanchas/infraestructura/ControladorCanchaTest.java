@@ -40,12 +40,12 @@ public class ControladorCanchaTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.codigo").value("19960815"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.nombre").value("EL TEMPLO"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.direccion").value("Calle 29 # 11 - 123"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.telefono").value("3157595261"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.tipoCancha").value(TipoCancha.FUTBOL_DIEZ.toString()))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.precioReserva").value(85000));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.codigo").value(comandoCancha.getCodigo()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.nombre").value(comandoCancha.getNombre()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.direccion").value(comandoCancha.getDireccion()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.telefono").value(comandoCancha.getTelefono()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.tipoCancha").value(comandoCancha.getTipoCancha().toString()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.precioReserva").value(comandoCancha.getPrecioReserva()));
     }
 
     @Test
