@@ -1,13 +1,16 @@
 package adn.oscar.reservascanchas.dominio.modelos;
 
-import static adn.oscar.reservascanchas.dominio.Validaciones.validarNumerico;
-import static adn.oscar.reservascanchas.dominio.Validaciones.validarObligatorio;
+import static adn.oscar.reservascanchas.dominio.Validaciones.*;
 
 public class Cliente {
 
     public static final String EL_NOMBRE_DEL_CLIENTE_NO_PUEDE_ESTAR_VACIO = "El nombre del cliente no puede estar vacio.";
     public static final String EL_NUMERO_DE_TELEFONO_NO_PUEDE_ESTAR_VACIO = "El número de teléfono no puede estar vacio.";
     public static final String EL_NUMERO_DE_TELEFONO_DEBE_SER_NUMERICO = "El número de teléfono debe ser númerico.";
+    public static final String EL_NUMERO_DE_TELEFONO_NO_ES_CORRECTO = "El número de teléfono no es correcto.";
+    public static final String EL_NUMERO_DE_CEDULA_NO_PUEDE_ESTAR_VACIO = "El número de cedula no puede estar vacio.";
+    public static final String EL_NUMERO_DE_CEDULA_DEBE_SER_NUMERICO = "El número de cedula debe ser númerico.";
+    public static final String EL_NUMERO_DE_CEDULA_NO_ES_CORRECTO = "El número de cedula no es correcto.";
 
     private final String nombre;
     private final String email;
@@ -17,7 +20,12 @@ public class Cliente {
     public Cliente(String nombre, String email, String telefono, String cedula) {
         validarObligatorio(nombre, EL_NOMBRE_DEL_CLIENTE_NO_PUEDE_ESTAR_VACIO);
         validarObligatorio(telefono, EL_NUMERO_DE_TELEFONO_NO_PUEDE_ESTAR_VACIO);
+        validarObligatorio(telefono, EL_NUMERO_DE_TELEFONO_NO_PUEDE_ESTAR_VACIO);
         validarNumerico(telefono, EL_NUMERO_DE_TELEFONO_DEBE_SER_NUMERICO);
+        validarPositivo(telefono, EL_NUMERO_DE_TELEFONO_NO_ES_CORRECTO);
+        validarObligatorio(cedula, EL_NUMERO_DE_CEDULA_NO_PUEDE_ESTAR_VACIO);
+        validarNumerico(cedula, EL_NUMERO_DE_CEDULA_DEBE_SER_NUMERICO);
+        validarPositivo(cedula, EL_NUMERO_DE_CEDULA_NO_ES_CORRECTO);
 
         this.nombre = nombre;
         this.email = email;
