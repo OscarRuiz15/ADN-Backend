@@ -49,7 +49,7 @@ pipeline {
 			steps{
 				echo '------------>Static Code Analysis<------------'
 				withSonarQubeEnv('Sonar') {
-					sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
+					sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
 				}
 			}
 		}
@@ -57,7 +57,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo "------------>Build<------------"
-				sh 'gradle build -x test'
+				sh 'gradle build -x'
 			}
 		}
 	}
