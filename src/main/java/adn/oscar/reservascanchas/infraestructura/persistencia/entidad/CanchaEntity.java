@@ -1,10 +1,14 @@
 package adn.oscar.reservascanchas.infraestructura.persistencia.entidad;
 
 import adn.oscar.reservascanchas.dominio.modelo.TipoCancha;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity(name = "Cancha")
+@Getter
+@Setter
 public class CanchaEntity {
 
     @Id
@@ -28,60 +32,4 @@ public class CanchaEntity {
 
     @Column(nullable = false)
     private double precioReserva;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public TipoCancha getTipoCancha() {
-        return tipoCancha;
-    }
-
-    public void setTipoCancha(TipoCancha tipoCancha) {
-        this.tipoCancha = tipoCancha;
-    }
-
-    public double getPrecioReserva() {
-        return precioReserva;
-    }
-
-    public void setPrecioReserva(double precioReserva) {
-        this.precioReserva = precioReserva;
-    }
 }

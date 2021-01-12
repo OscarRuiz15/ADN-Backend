@@ -1,8 +1,13 @@
 package adn.oscar.reservascanchas.infraestructura.persistencia.entidad;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity(name = "Cliente")
+@Getter
+@Setter
 public class ClienteEntity {
 
     @Id
@@ -19,44 +24,4 @@ public class ClienteEntity {
 
     @Column(nullable = false, unique = true)
     private String cedula;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String email) {
-        this.correo = email;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getCedula() {
-        return cedula;
-    }
-
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
 }

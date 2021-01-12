@@ -64,7 +64,7 @@ public class CanchaTestDataBuilder {
     }
 
     public ComandoCancha buildComando() {
-        return new ComandoCancha(codigo, nombre, direccion, telefono, tipoCancha, precioReserva);
+        return new ComandoCancha(precioReserva, tipoCancha, telefono, direccion, nombre, codigo);
     }
 
 }

@@ -47,6 +47,6 @@ public class ClienteTestDataBuilder {
     }
 
     public ComandoCliente buildComando() {
-        return new ComandoCliente(nombre, correo, telefono, cedula);
+        return new ComandoCliente(cedula, telefono, correo, nombre);
     }
 }

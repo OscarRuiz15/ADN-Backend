@@ -1,7 +1,9 @@
 package adn.oscar.reservascanchas.aplicacion.comando;
 
 import adn.oscar.reservascanchas.dominio.modelo.TipoCancha;
+import lombok.Getter;
 
+@Getter
 public class ComandoCancha {
 
     private final String codigo;
@@ -11,36 +13,12 @@ public class ComandoCancha {
     private final TipoCancha tipoCancha;
     private final double precioReserva;
 
-    public ComandoCancha(String codigo, String nombre, String direccion, String telefono, TipoCancha tipoCancha, double precioReserva) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.tipoCancha = tipoCancha;
+    public ComandoCancha(double precioReserva, TipoCancha tipoCancha, String telefono, String direccion, String nombre, String codigo) {
         this.precioReserva = precioReserva;
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public TipoCancha getTipoCancha() {
-        return tipoCancha;
-    }
-
-    public double getPrecioReserva() {
-        return precioReserva;
+        this.tipoCancha = tipoCancha;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.nombre = nombre;
+        this.codigo = codigo;
     }
 }
