@@ -1,7 +1,7 @@
 package adn.oscar.reservascanchas.dominio.servicio.cancha;
 
 import adn.oscar.reservascanchas.dominio.excepcion.CanchaException;
-import adn.oscar.reservascanchas.dominio.modelos.Cancha;
+import adn.oscar.reservascanchas.dominio.modelo.Cancha;
 import adn.oscar.reservascanchas.dominio.repositorio.RepositorioCancha;
 
 public class ServicioCrearCancha {

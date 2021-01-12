@@ -1,4 +1,4 @@
-package adn.oscar.reservascanchas.dominio.modelos;
+package adn.oscar.reservascanchas.dominio.modelo;
 
 import static adn.oscar.reservascanchas.dominio.Validaciones.*;
 
@@ -13,11 +13,11 @@ public class Cliente {
     public static final String EL_NUMERO_DE_CEDULA_NO_ES_CORRECTO = "El número de cedula no es correcto.";
 
     private final String nombre;
-    private final String email;
+    private final String correo;
     private final String telefono;
     private final String cedula;
 
-    public Cliente(String nombre, String email, String telefono, String cedula) {
+    public Cliente(String nombre, String correo, String telefono, String cedula) {
         validarObligatorio(nombre, EL_NOMBRE_DEL_CLIENTE_NO_PUEDE_ESTAR_VACIO);
         validarObligatorio(telefono, EL_NUMERO_DE_TELEFONO_NO_PUEDE_ESTAR_VACIO);
         validarObligatorio(telefono, EL_NUMERO_DE_TELEFONO_NO_PUEDE_ESTAR_VACIO);
@@ -28,7 +28,7 @@ public class Cliente {
         validarPositivo(cedula, EL_NUMERO_DE_CEDULA_NO_ES_CORRECTO);
 
         this.nombre = nombre;
-        this.email = email;
+        this.correo = correo;
         this.telefono = telefono;
         this.cedula = cedula;
     }
@@ -37,8 +37,8 @@ public class Cliente {
         return nombre;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCorreo() {
+        return correo;
     }
 
     public String getTelefono() {

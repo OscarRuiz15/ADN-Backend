@@ -40,7 +40,7 @@ public class ControladorClienteTest {
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.nombre").value("Oscar Alexander Ruiz Palacio"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("oarp1996@gmail.com"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.correo").value("oarp1996@gmail.com"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.telefono").value("3158895616"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.cedula").value("1115087378"));
     }
@@ -53,7 +53,7 @@ public class ControladorClienteTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.nombre").value("Carlos Andres Ruiz Palacio"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("caruizp@hotmail.com"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.correo").value("caruizp@hotmail.com"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.telefono").value("3177340123"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.cedula").value("1112585695"));
     }

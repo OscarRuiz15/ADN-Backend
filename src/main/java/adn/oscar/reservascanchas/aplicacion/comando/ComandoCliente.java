@@ -3,13 +3,13 @@ package adn.oscar.reservascanchas.aplicacion.comando;
 public class ComandoCliente {
 
     private final String nombre;
-    private final String email;
+    private final String correo;
     private final String telefono;
     private final String cedula;
 
-    public ComandoCliente(String nombre, String email, String telefono, String cedula) {
+    public ComandoCliente(String nombre, String correo, String telefono, String cedula) {
         this.nombre = nombre;
-        this.email = email;
+        this.correo = correo;
         this.telefono = telefono;
         this.cedula = cedula;
     }
@@ -18,8 +18,8 @@ public class ComandoCliente {
         return nombre;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCorreo() {
+        return correo;
     }
 
     public String getTelefono() {

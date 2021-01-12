@@ -1,6 +1,6 @@
 package adn.oscar.reservascanchas.aplicacion.manejadores.cancha;
 
-import adn.oscar.reservascanchas.dominio.modelos.Cancha;
+import adn.oscar.reservascanchas.dominio.modelo.Cancha;
 import adn.oscar.reservascanchas.dominio.servicio.cancha.ServicioObtenerCancha;
 import org.springframework.stereotype.Component;
 

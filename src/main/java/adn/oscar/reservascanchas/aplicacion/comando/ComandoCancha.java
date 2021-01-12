@@ -1,6 +1,6 @@
 package adn.oscar.reservascanchas.aplicacion.comando;
 
-import adn.oscar.reservascanchas.dominio.TipoCancha;
+import adn.oscar.reservascanchas.dominio.modelo.TipoCancha;
 
 public class ComandoCancha {
 

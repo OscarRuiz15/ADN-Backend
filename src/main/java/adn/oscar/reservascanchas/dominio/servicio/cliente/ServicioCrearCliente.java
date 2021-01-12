@@ -1,7 +1,7 @@
 package adn.oscar.reservascanchas.dominio.servicio.cliente;
 
 import adn.oscar.reservascanchas.dominio.excepcion.ClienteException;
-import adn.oscar.reservascanchas.dominio.modelos.Cliente;
+import adn.oscar.reservascanchas.dominio.modelo.Cliente;
 import adn.oscar.reservascanchas.dominio.repositorio.RepositorioCliente;
 
 

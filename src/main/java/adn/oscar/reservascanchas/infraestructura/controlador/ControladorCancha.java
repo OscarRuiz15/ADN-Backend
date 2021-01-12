@@ -3,7 +3,7 @@ package adn.oscar.reservascanchas.infraestructura.controlador;
 import adn.oscar.reservascanchas.aplicacion.comando.ComandoCancha;
 import adn.oscar.reservascanchas.aplicacion.manejadores.cancha.ManejadorCrearCancha;
 import adn.oscar.reservascanchas.aplicacion.manejadores.cancha.ManejadorObtenerCancha;
-import adn.oscar.reservascanchas.dominio.modelos.Cancha;
+import adn.oscar.reservascanchas.dominio.modelo.Cancha;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

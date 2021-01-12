@@ -12,7 +12,7 @@ public class ClienteEntity {
     @Column(nullable = false)
     private String nombre;
 
-    private String email = "";
+    private String correo = "";
 
     @Column(nullable = false)
     private String telefono;
@@ -36,12 +36,12 @@ public class ClienteEntity {
         this.nombre = nombre;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCorreo(String email) {
+        this.correo = email;
     }
 
     public String getTelefono() {

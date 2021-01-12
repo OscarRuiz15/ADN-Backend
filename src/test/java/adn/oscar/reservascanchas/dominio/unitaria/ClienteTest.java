@@ -3,7 +3,7 @@ package adn.oscar.reservascanchas.dominio.unitaria;
 import adn.oscar.reservascanchas.dominio.excepcion.ValorInvalidoException;
 import adn.oscar.reservascanchas.dominio.excepcion.ValorNumericoException;
 import adn.oscar.reservascanchas.dominio.excepcion.ValorObligatorioException;
-import adn.oscar.reservascanchas.dominio.modelos.Cliente;
+import adn.oscar.reservascanchas.dominio.modelo.Cliente;
 import adn.oscar.reservascanchas.testdatabuilder.ClienteTestDataBuilder;
 import org.junit.Test;
 
@@ -13,7 +13,7 @@ import static org.junit.Assert.fail;
 public class ClienteTest {
 
     private static final String NOMBRE = "Lina Marcela Pareja";
-    private static final String EMAIL = "lmpg@hotmail.com";
+    private static final String CORREO = "lmpg@hotmail.com";
     private static final String TELEFONO = "317734012";
     private static final String TELEFONO_ERRONEO = "3A1B7C7S34012";
     private static final String TELEFONO_NEGATIVO = "-3156964454";
@@ -26,7 +26,7 @@ public class ClienteTest {
         // arrange
         ClienteTestDataBuilder clienteTestDataBuilder = new ClienteTestDataBuilder()
                 .conNombre(NOMBRE)
-                .conEmail(EMAIL)
+                .conCorreo(CORREO)
                 .conTelefono(TELEFONO)
                 .conCedula(CEDUlA);
 
@@ -35,7 +35,7 @@ public class ClienteTest {
 
         // assert
         assertEquals(NOMBRE, cliente.getNombre());
-        assertEquals(EMAIL, cliente.getEmail());
+        assertEquals(CORREO, cliente.getCorreo());
         assertEquals(TELEFONO, cliente.getTelefono());
         assertEquals(CEDUlA, cliente.getCedula());
     }

@@ -1,6 +1,4 @@
-package adn.oscar.reservascanchas.dominio.modelos;
-
-import adn.oscar.reservascanchas.dominio.TipoCancha;
+package adn.oscar.reservascanchas.dominio.modelo;
 
 import static adn.oscar.reservascanchas.dominio.Validaciones.*;
 

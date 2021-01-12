@@ -1,8 +1,8 @@
 package adn.oscar.reservascanchas.testdatabuilder;
 
 import adn.oscar.reservascanchas.aplicacion.comando.ComandoCancha;
-import adn.oscar.reservascanchas.dominio.TipoCancha;
-import adn.oscar.reservascanchas.dominio.modelos.Cancha;
+import adn.oscar.reservascanchas.dominio.modelo.Cancha;
+import adn.oscar.reservascanchas.dominio.modelo.TipoCancha;
 
 public class CanchaTestDataBuilder {
 

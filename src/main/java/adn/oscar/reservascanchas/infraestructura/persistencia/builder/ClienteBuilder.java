@@ -1,6 +1,6 @@
 package adn.oscar.reservascanchas.infraestructura.persistencia.builder;
 
-import adn.oscar.reservascanchas.dominio.modelos.Cliente;
+import adn.oscar.reservascanchas.dominio.modelo.Cliente;
 import adn.oscar.reservascanchas.infraestructura.persistencia.entidad.ClienteEntity;
 
 public class ClienteBuilder {
@@ -11,7 +11,7 @@ public class ClienteBuilder {
     public static Cliente convertirADominio(ClienteEntity clienteEntity) {
         Cliente cliente = null;
         if (clienteEntity != null) {
-            cliente = new Cliente(clienteEntity.getNombre(), clienteEntity.getEmail(),
+            cliente = new Cliente(clienteEntity.getNombre(), clienteEntity.getCorreo(),
                     clienteEntity.getTelefono(), clienteEntity.getCedula());
         }
         return cliente;
@@ -20,7 +20,7 @@ public class ClienteBuilder {
     public static ClienteEntity convertirAEntity(Cliente cliente) {
         ClienteEntity clienteEntity = new ClienteEntity();
         clienteEntity.setNombre(cliente.getNombre());
-        clienteEntity.setEmail(cliente.getEmail());
+        clienteEntity.setCorreo(cliente.getCorreo());
         clienteEntity.setTelefono(cliente.getTelefono());
         clienteEntity.setCedula(cliente.getCedula());
 

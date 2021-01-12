@@ -1,4 +1,4 @@
-package adn.oscar.reservascanchas.dominio;
+package adn.oscar.reservascanchas.dominio.modelo;
 
 public enum TipoCancha {
     FUTBOL_CINCO,

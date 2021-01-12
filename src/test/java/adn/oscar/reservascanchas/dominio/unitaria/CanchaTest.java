@@ -1,10 +1,10 @@
 package adn.oscar.reservascanchas.dominio.unitaria;
 
-import adn.oscar.reservascanchas.dominio.TipoCancha;
 import adn.oscar.reservascanchas.dominio.excepcion.ValorInvalidoException;
 import adn.oscar.reservascanchas.dominio.excepcion.ValorNumericoException;
 import adn.oscar.reservascanchas.dominio.excepcion.ValorObligatorioException;
-import adn.oscar.reservascanchas.dominio.modelos.Cancha;
+import adn.oscar.reservascanchas.dominio.modelo.Cancha;
+import adn.oscar.reservascanchas.dominio.modelo.TipoCancha;
 import adn.oscar.reservascanchas.testdatabuilder.CanchaTestDataBuilder;
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
 package adn.oscar.reservascanchas.infraestructura.persistencia.entidad;
 
-import adn.oscar.reservascanchas.dominio.TipoCancha;
+import adn.oscar.reservascanchas.dominio.modelo.TipoCancha;
 
 import javax.persistence.*;
 

@@ -1,7 +1,7 @@
 package adn.oscar.reservascanchas.infraestructura;
 
 import adn.oscar.reservascanchas.aplicacion.comando.ComandoCancha;
-import adn.oscar.reservascanchas.dominio.TipoCancha;
+import adn.oscar.reservascanchas.dominio.modelo.TipoCancha;
 import adn.oscar.reservascanchas.testdatabuilder.CanchaTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;

@@ -1,13 +1,13 @@
 package adn.oscar.reservascanchas.aplicacion.fabrica;
 
 import adn.oscar.reservascanchas.aplicacion.comando.ComandoCliente;
-import adn.oscar.reservascanchas.dominio.modelos.Cliente;
+import adn.oscar.reservascanchas.dominio.modelo.Cliente;
 import org.springframework.stereotype.Component;
 
 @Component
 public class FabricaCliente {
     public Cliente crearCliente(ComandoCliente comandoCliente) {
-        return new Cliente(comandoCliente.getNombre(), comandoCliente.getEmail(),
+        return new Cliente(comandoCliente.getNombre(), comandoCliente.getCorreo(),
                 comandoCliente.getTelefono(), comandoCliente.getCedula());
     }
 }
