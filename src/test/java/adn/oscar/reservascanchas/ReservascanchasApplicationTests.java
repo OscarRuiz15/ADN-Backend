@@ -1,13 +1,11 @@
 package adn.oscar.reservascanchas;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.Test;
 
-@SpringBootTest
-class ReservascanchasApplicationTests {
+public class ReservascanchasApplicationTests {
 
     @Test
-    void contextLoads() {
+    public void contextLoads() {
     }
 
 }

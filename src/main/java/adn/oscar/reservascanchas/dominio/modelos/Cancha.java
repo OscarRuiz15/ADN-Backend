@@ -1,7 +1,8 @@
 package adn.oscar.reservascanchas.dominio.modelos;
 
 import adn.oscar.reservascanchas.dominio.TipoCancha;
-import adn.oscar.reservascanchas.dominio.excepcion.CanchaException;
+
+import static adn.oscar.reservascanchas.dominio.Validaciones.*;
 
 public class Cancha {
 
@@ -12,6 +13,8 @@ public class Cancha {
     public static final String EL_NUMERO_DE_TELEFONO_DE_CONTACTO_NO_PUEDE_ESTAR_VACIO = "El número de teléfono de contacto no puede estar vacio.";
     public static final String EL_NUMERO_DE_TELEFONO_DEBE_SER_NUMERICO = "El número de teléfono debe ser númerico.";
     public static final String EL_NUMERO_DE_TELEFONO_NO_ES_CORRECTO = "El número de teléfono no es correcto.";
+    public static final String EL_PRECIO_MINIMO_DE_RESERVA_ES_CINCUENTAMIL = "El precio minimo de reserva es de $50.000";
+    public static final double PRECIO_MINIMO = 50000;
 
     private final String codigo;
     private final String nombre;
@@ -25,9 +28,10 @@ public class Cancha {
         validarObligatorio(nombre, EL_NOMBRE_DE_LA_CANCHA_NO_PUEDE_ESTAR_VACIO);
         validarObligatorio(direccion, LA_DIRECCION_NO_PUEDE_ESTAR_VACIO);
         validarObligatorio(telefono, EL_NUMERO_DE_TELEFONO_DE_CONTACTO_NO_PUEDE_ESTAR_VACIO);
-        validarNumerico(telefono, EL_NUMERO_DE_TELEFONO_DE_CONTACTO_NO_PUEDE_ESTAR_VACIO);
-        validarNumeroPositivo(telefono, EL_NUMERO_DE_TELEFONO_NO_ES_CORRECTO);
+        validarNumerico(telefono, EL_NUMERO_DE_TELEFONO_DEBE_SER_NUMERICO);
+        validarPositivo(telefono, EL_NUMERO_DE_TELEFONO_NO_ES_CORRECTO);
         validarDecimalPositivo(precioReserva, EL_PRECIO_DE_RESERVA_DEBE_SER_MAYOR_A_CERO);
+        validarValorMinimo(precioReserva, PRECIO_MINIMO, EL_PRECIO_MINIMO_DE_RESERVA_ES_CINCUENTAMIL);
 
         this.codigo = codigo;
         this.nombre = nombre;
@@ -61,26 +65,4 @@ public class Cancha {
         return precioReserva;
     }
 
-    private void validarObligatorio(Object valor, String error) {
-        if (valor == null || valor.toString().trim().length() <= 0)
-            throw new CanchaException(error);
-    }
-
-    private void validarNumeroPositivo(String valor, String error) {
-        if (Long.parseLong(valor) < 0)
-            throw new CanchaException(error);
-    }
-
-    private void validarDecimalPositivo(double valor, String error) {
-        if (valor < 0)
-            throw new CanchaException(error);
-    }
-
-    public void validarNumerico(String valor, String mensaje) {
-        try {
-            Long.parseLong(valor);
-        } catch (NumberFormatException numberFormatException) {
-            throw new CanchaException(mensaje);
-        }
-    }
 }

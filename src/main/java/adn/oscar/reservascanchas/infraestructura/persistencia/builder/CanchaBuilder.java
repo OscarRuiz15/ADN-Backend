@@ -21,7 +21,7 @@ public class CanchaBuilder {
         CanchaEntity canchaEntity = new CanchaEntity();
         canchaEntity.setCodigo(cancha.getCodigo());
         canchaEntity.setNombre(cancha.getNombre());
-        canchaEntity.setDireccion(cancha.getTelefono());
+        canchaEntity.setDireccion(cancha.getDireccion());
         canchaEntity.setTelefono(cancha.getTelefono());
         canchaEntity.setTipoCancha(cancha.getTipoCancha());
         canchaEntity.setPrecioReserva(cancha.getPrecioReserva());

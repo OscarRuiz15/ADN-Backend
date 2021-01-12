@@ -1,6 +1,7 @@
 package adn.oscar.reservascanchas.dominio.modelos;
 
-import adn.oscar.reservascanchas.dominio.excepcion.ClienteException;
+import static adn.oscar.reservascanchas.dominio.Validaciones.validarNumerico;
+import static adn.oscar.reservascanchas.dominio.Validaciones.validarObligatorio;
 
 public class Cliente {
 
@@ -40,16 +41,4 @@ public class Cliente {
         return cedula;
     }
 
-    private void validarObligatorio(Object valor, String error) {
-        if (valor == null || valor.toString().trim().length() <= 0)
-            throw new ClienteException(error);
-    }
-
-    public void validarNumerico(String valor, String mensaje) {
-        try {
-            Long.parseLong(valor);
-        } catch (NumberFormatException numberFormatException) {
-            throw new ClienteException(mensaje);
-        }
-    }
 }
