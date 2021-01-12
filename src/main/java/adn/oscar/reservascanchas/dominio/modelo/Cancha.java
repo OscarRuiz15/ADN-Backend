@@ -1,10 +1,7 @@
 package adn.oscar.reservascanchas.dominio.modelo;
 
-import lombok.Getter;
-
 import static adn.oscar.reservascanchas.dominio.Validaciones.*;
 
-@Getter
 public class Cancha {
 
     public static final String EL_CODIGO_DE_LA_CANCHA_NO_PUEDE_ESTAR_VACIO = "El código de la cancha no puede estar vacio.";
@@ -42,4 +39,27 @@ public class Cancha {
         this.precioReserva = precioReserva;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public TipoCancha getTipoCancha() {
+        return tipoCancha;
+    }
+
+    public double getPrecioReserva() {
+        return precioReserva;
+    }
 }

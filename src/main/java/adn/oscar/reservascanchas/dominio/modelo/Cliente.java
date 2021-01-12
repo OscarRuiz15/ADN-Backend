@@ -1,10 +1,7 @@
 package adn.oscar.reservascanchas.dominio.modelo;
 
-import lombok.Getter;
-
 import static adn.oscar.reservascanchas.dominio.Validaciones.*;
 
-@Getter
 public class Cliente {
 
     public static final String EL_NOMBRE_DEL_CLIENTE_NO_PUEDE_ESTAR_VACIO = "El nombre del cliente no puede estar vacio.";
@@ -34,5 +31,21 @@ public class Cliente {
         this.correo = correo;
         this.telefono = telefono;
         this.cedula = cedula;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getCedula() {
+        return cedula;
     }
 }
