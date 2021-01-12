@@ -4,7 +4,7 @@ import adn.oscar.reservascanchas.dominio.excepcion.ValorInvalidoException;
 import adn.oscar.reservascanchas.dominio.excepcion.ValorNumericoException;
 import adn.oscar.reservascanchas.dominio.excepcion.ValorObligatorioException;
 
-public class Validaciones {
+public final class Validaciones {
 
     private Validaciones() {
     }
@@ -12,12 +12,6 @@ public class Validaciones {
     public static void validarObligatorio(Object valor, String mensaje) {
         if (valor == null || valor.toString().trim().length() <= 0) {
             throw new ValorObligatorioException(mensaje);
-        }
-    }
-
-    public static void validarEnteroPositivo(int valor, String mensaje) {
-        if (valor <= 0) {
-            throw new ValorInvalidoException(mensaje);
         }
     }
 

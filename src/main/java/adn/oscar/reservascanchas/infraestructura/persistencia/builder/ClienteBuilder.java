@@ -3,7 +3,7 @@ package adn.oscar.reservascanchas.infraestructura.persistencia.builder;
 import adn.oscar.reservascanchas.dominio.modelo.Cliente;
 import adn.oscar.reservascanchas.infraestructura.persistencia.entidad.ClienteEntity;
 
-public class ClienteBuilder {
+public final class ClienteBuilder {
 
     private ClienteBuilder() {
     }

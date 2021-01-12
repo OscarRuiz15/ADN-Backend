@@ -3,7 +3,7 @@ package adn.oscar.reservascanchas.infraestructura.persistencia.builder;
 import adn.oscar.reservascanchas.dominio.modelo.Cancha;
 import adn.oscar.reservascanchas.infraestructura.persistencia.entidad.CanchaEntity;
 
-public class CanchaBuilder {
+public final class CanchaBuilder {
 
     private CanchaBuilder() {
     }
