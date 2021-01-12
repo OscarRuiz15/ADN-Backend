@@ -8,7 +8,7 @@ public class ClienteTestDataBuilder {
     private static final String NOMBRE_CLIENTE = "Oscar Alexander Ruiz Palacio";
     private static final String EMAIL_CLIENTE = "oarp1996@gmail.com";
     private static final String TELEFONO_CLIENTE = "3158895616";
-    private static final String CEDULA_CLIENTE = "3158895616";
+    private static final String CEDULA_CLIENTE = "1115087378";
 
     private String nombre;
     private String email;

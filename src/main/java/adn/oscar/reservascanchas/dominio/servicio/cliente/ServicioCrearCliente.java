@@ -24,7 +24,7 @@ public class ServicioCrearCliente {
         return this.repositorioCliente.agregar(cliente);
     }
 
-    private boolean yaExisteCliente(String cedula) {
+    public boolean yaExisteCliente(String cedula) {
         return this.repositorioCliente.obtenerPorCedula(cedula) != null;
     }
 }
