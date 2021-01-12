@@ -1,7 +1,7 @@
 package adn.oscar.reservascanchas.aplicacion.fabrica;
 
 import adn.oscar.reservascanchas.aplicacion.comando.ComandoCancha;
-import adn.oscar.reservascanchas.dominio.Cancha;
+import adn.oscar.reservascanchas.dominio.modelos.Cancha;
 import org.springframework.stereotype.Component;
 
 @Component

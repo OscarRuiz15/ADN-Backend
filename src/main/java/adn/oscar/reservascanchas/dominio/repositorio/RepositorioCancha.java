@@ -1,6 +1,6 @@
 package adn.oscar.reservascanchas.dominio.repositorio;
 
-import adn.oscar.reservascanchas.dominio.Cancha;
+import adn.oscar.reservascanchas.dominio.modelos.Cancha;
 
 public interface RepositorioCancha {
 

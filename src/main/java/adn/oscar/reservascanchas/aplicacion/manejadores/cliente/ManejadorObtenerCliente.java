@@ -1,6 +1,6 @@
 package adn.oscar.reservascanchas.aplicacion.manejadores.cliente;
 
-import adn.oscar.reservascanchas.dominio.Cliente;
+import adn.oscar.reservascanchas.dominio.modelos.Cliente;
 import adn.oscar.reservascanchas.dominio.servicio.cliente.ServicioObtenerCliente;
 import org.springframework.stereotype.Component;
 

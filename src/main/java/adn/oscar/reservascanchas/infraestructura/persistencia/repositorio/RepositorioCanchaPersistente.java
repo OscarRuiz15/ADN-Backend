@@ -1,6 +1,6 @@
 package adn.oscar.reservascanchas.infraestructura.persistencia.repositorio;
 
-import adn.oscar.reservascanchas.dominio.Cancha;
+import adn.oscar.reservascanchas.dominio.modelos.Cancha;
 import adn.oscar.reservascanchas.dominio.repositorio.RepositorioCancha;
 import adn.oscar.reservascanchas.infraestructura.persistencia.builder.CanchaBuilder;
 import adn.oscar.reservascanchas.infraestructura.persistencia.entidad.CanchaEntity;

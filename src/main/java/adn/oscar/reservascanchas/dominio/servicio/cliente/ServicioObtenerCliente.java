@@ -1,6 +1,6 @@
 package adn.oscar.reservascanchas.dominio.servicio.cliente;
 
-import adn.oscar.reservascanchas.dominio.Cliente;
+import adn.oscar.reservascanchas.dominio.modelos.Cliente;
 import adn.oscar.reservascanchas.dominio.repositorio.RepositorioCliente;
 
 public class ServicioObtenerCliente {

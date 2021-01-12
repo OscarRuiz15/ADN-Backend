@@ -1,5 +1,6 @@
-package adn.oscar.reservascanchas.dominio;
+package adn.oscar.reservascanchas.dominio.modelos;
 
+import adn.oscar.reservascanchas.dominio.TipoCancha;
 import adn.oscar.reservascanchas.dominio.excepcion.CanchaException;
 
 public class Cancha {

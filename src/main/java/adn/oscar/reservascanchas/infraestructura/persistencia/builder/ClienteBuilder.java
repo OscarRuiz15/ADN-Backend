@@ -1,6 +1,6 @@
 package adn.oscar.reservascanchas.infraestructura.persistencia.builder;
 
-import adn.oscar.reservascanchas.dominio.Cliente;
+import adn.oscar.reservascanchas.dominio.modelos.Cliente;
 import adn.oscar.reservascanchas.infraestructura.persistencia.entidad.ClienteEntity;
 
 public class ClienteBuilder {

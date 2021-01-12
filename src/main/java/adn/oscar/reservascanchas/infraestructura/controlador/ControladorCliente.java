@@ -3,7 +3,7 @@ package adn.oscar.reservascanchas.infraestructura.controlador;
 import adn.oscar.reservascanchas.aplicacion.comando.ComandoCliente;
 import adn.oscar.reservascanchas.aplicacion.manejadores.cliente.ManejadorCrearCliente;
 import adn.oscar.reservascanchas.aplicacion.manejadores.cliente.ManejadorObtenerCliente;
-import adn.oscar.reservascanchas.dominio.Cliente;
+import adn.oscar.reservascanchas.dominio.modelos.Cliente;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

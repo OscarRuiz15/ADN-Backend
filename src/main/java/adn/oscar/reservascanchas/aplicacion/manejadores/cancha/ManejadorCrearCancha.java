@@ -2,7 +2,7 @@ package adn.oscar.reservascanchas.aplicacion.manejadores.cancha;
 
 import adn.oscar.reservascanchas.aplicacion.comando.ComandoCancha;
 import adn.oscar.reservascanchas.aplicacion.fabrica.FabricaCancha;
-import adn.oscar.reservascanchas.dominio.Cancha;
+import adn.oscar.reservascanchas.dominio.modelos.Cancha;
 import adn.oscar.reservascanchas.dominio.servicio.cancha.ServicioCrearCancha;
 import org.springframework.stereotype.Component;
 

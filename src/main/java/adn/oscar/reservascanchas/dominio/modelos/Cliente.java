@@ -1,4 +1,4 @@
-package adn.oscar.reservascanchas.dominio;
+package adn.oscar.reservascanchas.dominio.modelos;
 
 import adn.oscar.reservascanchas.dominio.excepcion.ClienteException;
 
