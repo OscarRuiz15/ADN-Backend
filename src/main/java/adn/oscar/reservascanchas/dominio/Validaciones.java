@@ -10,7 +10,13 @@ public final class Validaciones {
     }
 
     public static void validarObligatorio(Object valor, String mensaje) {
-        if (valor == null || valor.toString().trim().length() <= 0) {
+        if (valor == null) {
+            throw new ValorObligatorioException(mensaje);
+        }
+    }
+
+    public static void validarValorObligatorio(Double valor, String mensaje) {
+        if (valor == 0) {
             throw new ValorObligatorioException(mensaje);
         }
     }

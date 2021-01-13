@@ -12,6 +12,7 @@ public class Cancha {
     public static final String EL_NUMERO_DE_TELEFONO_DEBE_SER_NUMERICO = "El numero de telefono debe ser numerico.";
     public static final String EL_NUMERO_DE_TELEFONO_NO_ES_CORRECTO = "El numero de telefono no es correcto.";
     public static final String EL_PRECIO_MINIMO_DE_RESERVA_ES_CINCUENTAMIL = "El precio minimo de reserva es de $50.000";
+    public static final String EL_PRECIO_A_COBRAR_POR_RESERVA_ES_OBLIGATORIO = "El precio a cobrar por reserva es obligatorio.";
     public static final double PRECIO_MINIMO = 50000;
 
     private final String codigo;
@@ -28,6 +29,7 @@ public class Cancha {
         validarObligatorio(telefono, EL_NUMERO_DE_TELEFONO_DE_CONTACTO_NO_PUEDE_ESTAR_VACIO);
         validarNumerico(telefono, EL_NUMERO_DE_TELEFONO_DEBE_SER_NUMERICO);
         validarPositivo(telefono, EL_NUMERO_DE_TELEFONO_NO_ES_CORRECTO);
+        validarValorObligatorio(precioReserva, EL_PRECIO_A_COBRAR_POR_RESERVA_ES_OBLIGATORIO);
         validarDecimalPositivo(precioReserva, EL_PRECIO_DE_RESERVA_DEBE_SER_MAYOR_A_CERO);
         validarValorMinimo(precioReserva, PRECIO_MINIMO, EL_PRECIO_MINIMO_DE_RESERVA_ES_CINCUENTAMIL);
 

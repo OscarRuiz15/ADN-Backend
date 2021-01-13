@@ -146,6 +146,22 @@ public class CanchaTest {
     }
 
     @Test
+    public void crearCanchaSinPrecioDeReservaTest() {
+        // arrange
+        CanchaTestDataBuilder canchaTestDataBuilder = new CanchaTestDataBuilder()
+                .conPrecioReserva(0);
+
+        try {
+            // act
+            Cancha cancha = canchaTestDataBuilder.build();
+            fail();
+        } catch (ValorObligatorioException valorObligatorioException) {
+            // assert
+            assertEquals(Cancha.EL_PRECIO_A_COBRAR_POR_RESERVA_ES_OBLIGATORIO, valorObligatorioException.getMessage());
+        }
+    }
+
+    @Test
     public void crearCanchaConPrecioDeReservaNegativoTest() {
         // arrange
         CanchaTestDataBuilder canchaTestDataBuilder = new CanchaTestDataBuilder()

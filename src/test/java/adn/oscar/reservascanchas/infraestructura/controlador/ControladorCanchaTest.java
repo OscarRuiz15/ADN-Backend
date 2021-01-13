@@ -1,4 +1,4 @@
-package adn.oscar.reservascanchas.infraestructura;
+package adn.oscar.reservascanchas.infraestructura.controlador;
 
 import adn.oscar.reservascanchas.aplicacion.comando.ComandoCancha;
 import adn.oscar.reservascanchas.dominio.modelo.TipoCancha;

@@ -1,4 +1,4 @@
-package adn.oscar.reservascanchas.infraestructura;
+package adn.oscar.reservascanchas.infraestructura.controlador;
 
 import adn.oscar.reservascanchas.aplicacion.comando.ComandoCliente;
 import adn.oscar.reservascanchas.testdatabuilder.ClienteTestDataBuilder;
