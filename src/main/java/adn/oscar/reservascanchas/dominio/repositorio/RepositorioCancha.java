@@ -5,7 +5,7 @@ import adn.oscar.reservascanchas.dominio.modelo.Cancha;
 public interface RepositorioCancha {
 
     /**
-     * Obtener una cancha dado el código
+     * Obtener una cancha dado el codigo
      *
      * @param codigo
      * @return Cancha

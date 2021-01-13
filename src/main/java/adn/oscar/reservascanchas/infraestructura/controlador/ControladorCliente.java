@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/clientes")
+@CrossOrigin(origins = "*")
 public class ControladorCliente {
 
     private final ManejadorCrearCliente manejadorCrearCliente;

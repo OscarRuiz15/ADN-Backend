@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/canchas")
+@CrossOrigin(origins = "*")
 public class ControladorCancha {
 
     private final ManejadorCrearCancha manejadorCrearCancha;

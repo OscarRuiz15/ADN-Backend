@@ -4,13 +4,13 @@ import static adn.oscar.reservascanchas.dominio.Validaciones.*;
 
 public class Cancha {
 
-    public static final String EL_CODIGO_DE_LA_CANCHA_NO_PUEDE_ESTAR_VACIO = "El código de la cancha no puede estar vacio.";
+    public static final String EL_CODIGO_DE_LA_CANCHA_NO_PUEDE_ESTAR_VACIO = "El codigo de la cancha no puede estar vacio.";
     public static final String EL_PRECIO_DE_RESERVA_DEBE_SER_MAYOR_A_CERO = "El precio de reserva debe ser mayor a 0.";
     public static final String EL_NOMBRE_DE_LA_CANCHA_NO_PUEDE_ESTAR_VACIO = "El nombre de la cancha no puede estar vacio.";
-    public static final String LA_DIRECCION_NO_PUEDE_ESTAR_VACIO = "La dirección de la cancha no puede estar vacio.";
-    public static final String EL_NUMERO_DE_TELEFONO_DE_CONTACTO_NO_PUEDE_ESTAR_VACIO = "El número de teléfono de contacto no puede estar vacio.";
-    public static final String EL_NUMERO_DE_TELEFONO_DEBE_SER_NUMERICO = "El número de teléfono debe ser númerico.";
-    public static final String EL_NUMERO_DE_TELEFONO_NO_ES_CORRECTO = "El número de teléfono no es correcto.";
+    public static final String LA_DIRECCION_NO_PUEDE_ESTAR_VACIO = "La direccion de la cancha no puede estar vacio.";
+    public static final String EL_NUMERO_DE_TELEFONO_DE_CONTACTO_NO_PUEDE_ESTAR_VACIO = "El numero de telefono de contacto no puede estar vacio.";
+    public static final String EL_NUMERO_DE_TELEFONO_DEBE_SER_NUMERICO = "El numero de telefono debe ser numerico.";
+    public static final String EL_NUMERO_DE_TELEFONO_NO_ES_CORRECTO = "El numero de telefono no es correcto.";
     public static final String EL_PRECIO_MINIMO_DE_RESERVA_ES_CINCUENTAMIL = "El precio minimo de reserva es de $50.000";
     public static final double PRECIO_MINIMO = 50000;
 
