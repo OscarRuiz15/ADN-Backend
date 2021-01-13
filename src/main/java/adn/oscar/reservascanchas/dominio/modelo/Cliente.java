@@ -18,12 +18,11 @@ public class Cliente {
     private final String cedula;
 
     public Cliente(String nombre, String correo, String telefono, String cedula) {
-        validarObligatorio(nombre, EL_NOMBRE_DEL_CLIENTE_NO_PUEDE_ESTAR_VACIO);
-        validarObligatorio(telefono, EL_NUMERO_DE_TELEFONO_NO_PUEDE_ESTAR_VACIO);
-        validarObligatorio(telefono, EL_NUMERO_DE_TELEFONO_NO_PUEDE_ESTAR_VACIO);
+        validarCadenaVacia(nombre, EL_NOMBRE_DEL_CLIENTE_NO_PUEDE_ESTAR_VACIO);
+        validarCadenaVacia(telefono, EL_NUMERO_DE_TELEFONO_NO_PUEDE_ESTAR_VACIO);
         validarNumerico(telefono, EL_NUMERO_DE_TELEFONO_DEBE_SER_NUMERICO);
         validarPositivo(telefono, EL_NUMERO_DE_TELEFONO_NO_ES_CORRECTO);
-        validarObligatorio(cedula, EL_NUMERO_DE_CEDULA_NO_PUEDE_ESTAR_VACIO);
+        validarCadenaVacia(cedula, EL_NUMERO_DE_CEDULA_NO_PUEDE_ESTAR_VACIO);
         validarNumerico(cedula, EL_NUMERO_DE_CEDULA_DEBE_SER_NUMERICO);
         validarPositivo(cedula, EL_NUMERO_DE_CEDULA_NO_ES_CORRECTO);
 

@@ -28,8 +28,8 @@ public class Reserva {
     public Reserva(Cancha cancha, Cliente cliente, String fechaInicioReserva, String fechaFinReserva, double valorPago) {
         validarObligatorio(cancha, NO_HA_ELEGIDO_CANCHA_A_RESERVAR);
         validarObligatorio(cliente, NO_HAY_CLIENTE_A_REALIZAR_RESERVA);
-        validarObligatorio(fechaInicioReserva, LA_FECHA_DE_INICIO_RESERVA_ES_OBLIGATORIA);
-        validarObligatorio(fechaFinReserva, LA_FECHA_DE_FIN_RESERVA_ES_OBLIGATORIA);
+        validarCadenaVacia(fechaInicioReserva, LA_FECHA_DE_INICIO_RESERVA_ES_OBLIGATORIA);
+        validarCadenaVacia(fechaFinReserva, LA_FECHA_DE_FIN_RESERVA_ES_OBLIGATORIA);
         validarValorObligatorio(valorPago, EL_PRECIO_A_PAGAR_POR_RESERVA_ES_OBLIGATORIO);
         validarDecimalPositivo(valorPago, EL_PRECIO_A_PAGAR_POR_RESERVAR_DEBE_SER_MAYOR_A_CERO);
 

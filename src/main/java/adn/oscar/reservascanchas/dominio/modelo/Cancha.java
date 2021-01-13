@@ -23,10 +23,10 @@ public class Cancha {
     private final double precioReserva;
 
     public Cancha(String codigo, String nombre, String direccion, String telefono, TipoCancha tipoCancha, double precioReserva) {
-        validarObligatorio(codigo, EL_CODIGO_DE_LA_CANCHA_NO_PUEDE_ESTAR_VACIO);
-        validarObligatorio(nombre, EL_NOMBRE_DE_LA_CANCHA_NO_PUEDE_ESTAR_VACIO);
-        validarObligatorio(direccion, LA_DIRECCION_NO_PUEDE_ESTAR_VACIO);
-        validarObligatorio(telefono, EL_NUMERO_DE_TELEFONO_DE_CONTACTO_NO_PUEDE_ESTAR_VACIO);
+        validarCadenaVacia(codigo, EL_CODIGO_DE_LA_CANCHA_NO_PUEDE_ESTAR_VACIO);
+        validarCadenaVacia(nombre, EL_NOMBRE_DE_LA_CANCHA_NO_PUEDE_ESTAR_VACIO);
+        validarCadenaVacia(direccion, LA_DIRECCION_NO_PUEDE_ESTAR_VACIO);
+        validarCadenaVacia(telefono, EL_NUMERO_DE_TELEFONO_DE_CONTACTO_NO_PUEDE_ESTAR_VACIO);
         validarNumerico(telefono, EL_NUMERO_DE_TELEFONO_DEBE_SER_NUMERICO);
         validarPositivo(telefono, EL_NUMERO_DE_TELEFONO_NO_ES_CORRECTO);
         validarValorObligatorio(precioReserva, EL_PRECIO_A_COBRAR_POR_RESERVA_ES_OBLIGATORIO);

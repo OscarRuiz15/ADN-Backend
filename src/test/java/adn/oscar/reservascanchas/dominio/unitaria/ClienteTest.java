@@ -20,6 +20,7 @@ public class ClienteTest {
     private static final String CEDUlA = "1116084667";
     private static final String CEDUlA_ERRONEO = "11A1B6S0C84667";
     private static final String CEDUlA_NEGATIVO = "-1116084667";
+    private static final String PARAMETRO_VACIO = "";
 
     @Test
     public void crearClienteTest() {
@@ -44,7 +45,7 @@ public class ClienteTest {
     public void crearClienteSinNombre() {
         // arrange
         ClienteTestDataBuilder clienteTestDataBuilder = new ClienteTestDataBuilder()
-                .conNombre(null);
+                .conNombre(PARAMETRO_VACIO);
 
         try {
             // act
@@ -60,7 +61,7 @@ public class ClienteTest {
     public void crearClienteSinTelefono() {
         // arrange
         ClienteTestDataBuilder clienteTestDataBuilder = new ClienteTestDataBuilder()
-                .conTelefono(null);
+                .conTelefono(PARAMETRO_VACIO);
 
         try {
             // act
@@ -108,7 +109,7 @@ public class ClienteTest {
     public void crearClienteSinCedula() {
         // arrange
         ClienteTestDataBuilder clienteTestDataBuilder = new ClienteTestDataBuilder()
-                .conCedula(null);
+                .conCedula(PARAMETRO_VACIO);
 
         try {
             // act

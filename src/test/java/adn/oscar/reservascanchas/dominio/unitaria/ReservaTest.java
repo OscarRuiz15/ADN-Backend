@@ -27,6 +27,7 @@ public class ReservaTest {
     private static final String FECHA_INICIO_RESERVA = "2021-01-13 15:30";
     private static final String FECHA_INICIO_RESERVA_ERRONEO = "2021/01/13-15:30";
     private static final String FECHA_FIN_RESERVA = "2021-01-13 16:30";
+    private static final String PARAMETRO_VACIO = "";
 
     @Test
     public void crearReservaTest() {
@@ -88,7 +89,7 @@ public class ReservaTest {
     public void crearReservaSinFechaInicioTest() {
         // arrange
         ReservaTestDataBuilder reservaTestDataBuilder = new ReservaTestDataBuilder()
-                .conFechaInicioReserva(null);
+                .conFechaInicioReserva(PARAMETRO_VACIO);
 
         try {
             // act
@@ -104,7 +105,7 @@ public class ReservaTest {
     public void crearReservaSinFechaFinTest() {
         // arrange
         ReservaTestDataBuilder reservaTestDataBuilder = new ReservaTestDataBuilder()
-                .conFechaFinReserva(null);
+                .conFechaFinReserva(PARAMETRO_VACIO);
 
         try {
             // act
