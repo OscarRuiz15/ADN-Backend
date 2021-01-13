@@ -6,7 +6,7 @@ import adn.oscar.reservascanchas.dominio.repositorio.RepositorioCancha;
 
 public class ServicioCrearCancha {
 
-    private static final String YA_EXISTE_UNA_CANCHA_REGISTRADA_CON_EL_MISMO_CODIGO = "Ya existe una cancha registrada con el mismo codigo";
+    public static final String YA_EXISTE_UNA_CANCHA_REGISTRADA_CON_EL_MISMO_CODIGO = "Ya existe una cancha registrada con el mismo codigo";
 
     private final RepositorioCancha repositorioCancha;
 
