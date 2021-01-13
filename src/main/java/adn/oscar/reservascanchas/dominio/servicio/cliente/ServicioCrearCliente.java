@@ -7,7 +7,7 @@ import adn.oscar.reservascanchas.dominio.repositorio.RepositorioCliente;
 
 public class ServicioCrearCliente {
 
-    private static final String YA_EXISTE_UN_CLIENTE_REGISTRADO_CON_LA_MISMA_CEDULA = "Ya existe un cliente registrado con la misma cedula";
+    public static final String YA_EXISTE_UN_CLIENTE_REGISTRADO_CON_LA_MISMA_CEDULA = "Ya existe un cliente registrado con la misma cedula";
 
     private final RepositorioCliente repositorioCliente;
 

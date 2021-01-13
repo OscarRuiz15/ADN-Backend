@@ -19,7 +19,7 @@ public class ServicioObtenerClienteTest {
     RepositorioCliente repositorioCliente;
 
     @InjectMocks
-    ServicioCrearCliente servicioCrearCliente;
+    ServicioObtenerCliente servicioObtenerCliente;
 
     @Before
     public void setUp() {
@@ -27,26 +27,26 @@ public class ServicioObtenerClienteTest {
     }
 
     @Test
-    public void clienteYaExiste() {
+    public void obtenerClienteExistenteTest() {
         // arrange
         Cliente cliente = new ClienteTestDataBuilder().build();
         when(repositorioCliente.obtenerPorCedula(cliente.getCedula())).thenReturn(cliente);
 
         // act
-        boolean existe = servicioCrearCliente.yaExisteCliente(cliente.getCedula());
+        boolean existe = servicioObtenerCliente.ejecutar(cliente.getCedula()) != null;
 
         // assert
         assertTrue(existe);
     }
 
     @Test
-    public void clienteNoExiste() {
+    public void obtenerClienteNoExistenteTest() {
         // arrange
         Cliente cliente = new ClienteTestDataBuilder().build();
         when(repositorioCliente.obtenerPorCedula(cliente.getCedula())).thenReturn(null);
 
         // act
-        boolean existe = servicioCrearCliente.yaExisteCliente(cliente.getCedula());
+        boolean existe = servicioObtenerCliente.ejecutar(cliente.getCedula()) != null;
 
         // assert
         assertFalse(existe);
