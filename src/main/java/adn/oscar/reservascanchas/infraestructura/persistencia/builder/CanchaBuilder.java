@@ -11,7 +11,7 @@ public final class CanchaBuilder {
     public static Cancha convertirADominio(CanchaEntity canchaEntity) {
         Cancha cancha = null;
         if (canchaEntity != null) {
-            cancha = new Cancha(canchaEntity.getCodigo(), canchaEntity.getNombre(), canchaEntity.getDireccion(),
+            cancha = new Cancha(canchaEntity.getId(), canchaEntity.getCodigo(), canchaEntity.getNombre(), canchaEntity.getDireccion(),
                     canchaEntity.getTelefono(), canchaEntity.getTipoCancha(), canchaEntity.getPrecioReserva());
         }
         return cancha;
@@ -19,6 +19,7 @@ public final class CanchaBuilder {
 
     public static CanchaEntity convertirAEntity(Cancha cancha) {
         CanchaEntity canchaEntity = new CanchaEntity();
+        canchaEntity.setId(cancha.getId());
         canchaEntity.setCodigo(cancha.getCodigo());
         canchaEntity.setNombre(cancha.getNombre());
         canchaEntity.setDireccion(cancha.getDireccion());

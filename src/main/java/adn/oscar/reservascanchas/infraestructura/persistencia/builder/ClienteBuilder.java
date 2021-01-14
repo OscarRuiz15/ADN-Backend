@@ -11,7 +11,7 @@ public final class ClienteBuilder {
     public static Cliente convertirADominio(ClienteEntity clienteEntity) {
         Cliente cliente = null;
         if (clienteEntity != null) {
-            cliente = new Cliente(clienteEntity.getNombre(), clienteEntity.getCorreo(),
+            cliente = new Cliente(clienteEntity.getId(), clienteEntity.getNombre(), clienteEntity.getCorreo(),
                     clienteEntity.getTelefono(), clienteEntity.getCedula());
         }
         return cliente;
@@ -19,6 +19,7 @@ public final class ClienteBuilder {
 
     public static ClienteEntity convertirAEntity(Cliente cliente) {
         ClienteEntity clienteEntity = new ClienteEntity();
+        clienteEntity.setId(cliente.getId());
         clienteEntity.setNombre(cliente.getNombre());
         clienteEntity.setCorreo(cliente.getCorreo());
         clienteEntity.setTelefono(cliente.getTelefono());

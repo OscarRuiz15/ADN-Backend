@@ -10,13 +10,15 @@ public class ComandoReserva {
     private final String fechaInicioReserva;
     private final Cliente cliente;
     private final Cancha cancha;
+    private final Long id;
 
-    public ComandoReserva(double valorPago, String fechaFinReserva, String fechaInicioReserva, Cliente cliente, Cancha cancha) {
+    public ComandoReserva(double valorPago, String fechaFinReserva, String fechaInicioReserva, Cliente cliente, Cancha cancha, Long id) {
         this.valorPago = valorPago;
         this.fechaFinReserva = fechaFinReserva;
         this.fechaInicioReserva = fechaInicioReserva;
         this.cliente = cliente;
         this.cancha = cancha;
+        this.id = id;
     }
 
     public double getValorPago() {
@@ -37,5 +39,9 @@ public class ComandoReserva {
 
     public Cancha getCancha() {
         return cancha;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

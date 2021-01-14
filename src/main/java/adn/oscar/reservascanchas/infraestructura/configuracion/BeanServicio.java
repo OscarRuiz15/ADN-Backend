@@ -2,10 +2,13 @@ package adn.oscar.reservascanchas.infraestructura.configuracion;
 
 import adn.oscar.reservascanchas.dominio.repositorio.RepositorioCancha;
 import adn.oscar.reservascanchas.dominio.repositorio.RepositorioCliente;
+import adn.oscar.reservascanchas.dominio.repositorio.RepositorioReserva;
 import adn.oscar.reservascanchas.dominio.servicio.cancha.ServicioCrearCancha;
 import adn.oscar.reservascanchas.dominio.servicio.cancha.ServicioObtenerCancha;
 import adn.oscar.reservascanchas.dominio.servicio.cliente.ServicioCrearCliente;
 import adn.oscar.reservascanchas.dominio.servicio.cliente.ServicioObtenerCliente;
+import adn.oscar.reservascanchas.dominio.servicio.reserva.ServicioCrearReserva;
+import adn.oscar.reservascanchas.dominio.servicio.reserva.ServicioObtenerReserva;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -30,5 +33,15 @@ public class BeanServicio {
     @Bean
     public ServicioObtenerCliente servicioObtenerCliente(RepositorioCliente repositorioCancha) {
         return new ServicioObtenerCliente(repositorioCancha);
+    }
+
+    @Bean
+    public ServicioCrearReserva servicioCrearReserva(RepositorioReserva repositorioReserva) {
+        return new ServicioCrearReserva(repositorioReserva);
+    }
+
+    @Bean
+    public ServicioObtenerReserva servicioObtenerReserva(RepositorioReserva repositorioReserva) {
+        return new ServicioObtenerReserva(repositorioReserva);
     }
 }

@@ -2,6 +2,7 @@ package adn.oscar.reservascanchas.infraestructura.error;
 
 import adn.oscar.reservascanchas.dominio.excepcion.CanchaException;
 import adn.oscar.reservascanchas.dominio.excepcion.ClienteException;
+import adn.oscar.reservascanchas.dominio.excepcion.ReservaException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -18,6 +19,7 @@ public class ManejadorError extends ResponseEntityExceptionHandler {
     public ManejadorError() {
         CODIGOS_ESTADO.put(CanchaException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
         CODIGOS_ESTADO.put(ClienteException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
+        CODIGOS_ESTADO.put(ReservaException.class.getSimpleName(), HttpStatus.BAD_REQUEST.value());
     }
 
     @ExceptionHandler(Exception.class)

@@ -6,6 +6,7 @@ import adn.oscar.reservascanchas.dominio.modelo.TipoCancha;
 
 public class CanchaTestDataBuilder {
 
+    private static final Long ID = 27L;
     private static final String CODIGO_CANCHA = "19960815";
     private static final String NOMBRE_CANCHA = "EL TEMPLO";
     private static final String DIRECCION_CANCHA = "Calle 29 # 11 - 123";
@@ -13,6 +14,7 @@ public class CanchaTestDataBuilder {
     private static final TipoCancha TIPO_CANCHA = TipoCancha.FUTBOL_DIEZ;
     private static final double PRECIO_RESERVA = 85000;
 
+    private final Long id;
     private String codigo;
     private String nombre;
     private String direccion;
@@ -21,6 +23,7 @@ public class CanchaTestDataBuilder {
     private double precioReserva;
 
     public CanchaTestDataBuilder() {
+        this.id = ID;
         this.codigo = CODIGO_CANCHA;
         this.nombre = NOMBRE_CANCHA;
         this.direccion = DIRECCION_CANCHA;
@@ -60,11 +63,11 @@ public class CanchaTestDataBuilder {
     }
 
     public Cancha build() {
-        return new Cancha(codigo, nombre, direccion, telefono, tipoCancha, precioReserva);
+        return new Cancha(id, codigo, nombre, direccion, telefono, tipoCancha, precioReserva);
     }
 
     public ComandoCancha buildComando() {
-        return new ComandoCancha(precioReserva, tipoCancha, telefono, direccion, nombre, codigo);
+        return new ComandoCancha(precioReserva, tipoCancha, telefono, direccion, nombre, codigo, id);
     }
 
 }

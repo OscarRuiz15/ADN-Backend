@@ -10,14 +10,16 @@ public class ComandoCancha {
     private final String direccion;
     private final String nombre;
     private final String codigo;
+    private final Long id;
 
-    public ComandoCancha(double precioReserva, TipoCancha tipoCancha, String telefono, String direccion, String nombre, String codigo) {
+    public ComandoCancha(double precioReserva, TipoCancha tipoCancha, String telefono, String direccion, String nombre, String codigo, Long id) {
         this.precioReserva = precioReserva;
         this.tipoCancha = tipoCancha;
         this.telefono = telefono;
         this.direccion = direccion;
         this.nombre = nombre;
         this.codigo = codigo;
+        this.id = id;
     }
 
     public double getPrecioReserva() {
@@ -42,5 +44,9 @@ public class ComandoCancha {
 
     public String getCodigo() {
         return codigo;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

@@ -15,6 +15,7 @@ public class Cancha {
     public static final String EL_PRECIO_A_COBRAR_POR_RESERVA_ES_OBLIGATORIO = "El precio a cobrar por reserva es obligatorio.";
     public static final double PRECIO_MINIMO = 50000;
 
+    private final Long id;
     private final String codigo;
     private final String nombre;
     private final String direccion;
@@ -22,7 +23,7 @@ public class Cancha {
     private final TipoCancha tipoCancha;
     private final double precioReserva;
 
-    public Cancha(String codigo, String nombre, String direccion, String telefono, TipoCancha tipoCancha, double precioReserva) {
+    public Cancha(Long id, String codigo, String nombre, String direccion, String telefono, TipoCancha tipoCancha, double precioReserva) {
         validarCadenaVacia(codigo, EL_CODIGO_DE_LA_CANCHA_NO_PUEDE_ESTAR_VACIO);
         validarCadenaVacia(nombre, EL_NOMBRE_DE_LA_CANCHA_NO_PUEDE_ESTAR_VACIO);
         validarCadenaVacia(direccion, LA_DIRECCION_NO_PUEDE_ESTAR_VACIO);
@@ -33,12 +34,17 @@ public class Cancha {
         validarDecimalPositivo(precioReserva, EL_PRECIO_DE_RESERVA_DEBE_SER_MAYOR_A_CERO);
         validarValorMinimo(precioReserva, PRECIO_MINIMO, EL_PRECIO_MINIMO_DE_RESERVA_ES_CINCUENTAMIL);
 
+        this.id = id;
         this.codigo = codigo;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.tipoCancha = tipoCancha;
         this.precioReserva = precioReserva;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getCodigo() {

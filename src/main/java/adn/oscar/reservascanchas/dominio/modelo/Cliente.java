@@ -12,12 +12,13 @@ public class Cliente {
     public static final String EL_NUMERO_DE_CEDULA_DEBE_SER_NUMERICO = "El numero de cedula debe ser numerico.";
     public static final String EL_NUMERO_DE_CEDULA_NO_ES_CORRECTO = "El numero de cedula no es correcto.";
 
+    private final Long id;
     private final String nombre;
     private final String correo;
     private final String telefono;
     private final String cedula;
 
-    public Cliente(String nombre, String correo, String telefono, String cedula) {
+    public Cliente(Long id, String nombre, String correo, String telefono, String cedula) {
         validarCadenaVacia(nombre, EL_NOMBRE_DEL_CLIENTE_NO_PUEDE_ESTAR_VACIO);
         validarCadenaVacia(telefono, EL_NUMERO_DE_TELEFONO_NO_PUEDE_ESTAR_VACIO);
         validarNumerico(telefono, EL_NUMERO_DE_TELEFONO_DEBE_SER_NUMERICO);
@@ -26,10 +27,15 @@ public class Cliente {
         validarNumerico(cedula, EL_NUMERO_DE_CEDULA_DEBE_SER_NUMERICO);
         validarPositivo(cedula, EL_NUMERO_DE_CEDULA_NO_ES_CORRECTO);
 
+        this.id = id;
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
         this.cedula = cedula;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getNombre() {

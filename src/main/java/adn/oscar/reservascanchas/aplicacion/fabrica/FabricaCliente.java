@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class FabricaCliente {
     public Cliente crearCliente(ComandoCliente comandoCliente) {
-        return new Cliente(comandoCliente.getNombre(), comandoCliente.getCorreo(),
+        return new Cliente(comandoCliente.getId(), comandoCliente.getNombre(), comandoCliente.getCorreo(),
                 comandoCliente.getTelefono(), comandoCliente.getCedula());
     }
 }
