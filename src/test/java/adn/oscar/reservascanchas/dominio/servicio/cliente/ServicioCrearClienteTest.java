@@ -11,15 +11,16 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
 public class ServicioCrearClienteTest {
 
     @Mock
-    RepositorioCliente repositorioCliente;
+    private RepositorioCliente repositorioCliente;
 
     @InjectMocks
-    ServicioCrearCliente servicioCrearCliente;
+    private ServicioCrearCliente servicioCrearCliente;
 
     @Before
     public void setUp() {
@@ -51,6 +52,7 @@ public class ServicioCrearClienteTest {
         try {
             // act
             servicioCrearCliente.ejecutar(cliente);
+            fail();
         } catch (ClienteException clienteException) {
             // assert
             assertEquals(ServicioCrearCliente.YA_EXISTE_UN_CLIENTE_REGISTRADO_CON_LA_MISMA_CEDULA,

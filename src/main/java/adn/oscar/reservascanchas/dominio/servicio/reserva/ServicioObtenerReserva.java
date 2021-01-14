@@ -11,7 +11,7 @@ public class ServicioObtenerReserva {
         this.repositorioReserva = repositorioReserva;
     }
 
-    public Reserva ejecutar(String cedula) {
-        return null;
+    public Reserva ejecutar(Long id) {
+        return this.repositorioReserva.obtenerPorId(id);
     }
 }

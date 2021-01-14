@@ -1,7 +1,17 @@
 -- INSERT CANCHAS
-INSERT INTO cancha(id, codigo, nombre, direccion, telefono, tipo_cancha, precio_reserva)
+INSERT INTO cancha(ID, CODIGO, NOMBRE, DIRECCION, TELEFONO, TIPO_CANCHA, PRECIO_RESERVA)
 VALUES (10, 'EDG47F', 'Fulbol Palacio', 'Carrera 26 # 11 - 136', '3183993173', 'FUTBOL_SEIS', 95000);
+INSERT INTO cancha(ID, CODIGO, NOMBRE, DIRECCION, TELEFONO, TIPO_CANCHA, PRECIO_RESERVA)
+VALUES (20, 'EBD67E', 'San Jose Obrero', 'Calle 13 # 4 - 61', '3138479283', 'FUTBOL_SIETE', 60000);
 
 -- INSERT CLIENTES
-INSERT INTO cliente(id, nombre, correo, telefono, cedula)
+INSERT INTO cliente(ID, NOMBRE, CORREO, TELEFONO, CEDULA)
 VALUES (10, 'Carlos Andres Ruiz Palacio', 'caruizp@hotmail.com', '3177340123', '1112585695');
+INSERT INTO cliente(ID, NOMBRE, CORREO, TELEFONO, CEDULA)
+VALUES (20, 'Pedro Ignacio Ruiz', 'pedroruiz@hotmail.com', '3194827423', '1114829483');
+INSERT INTO cliente(ID, NOMBRE, CORREO, TELEFONO, CEDULA)
+VALUES (30, 'Juan Ignacio', 'juan@hotmail.com', '3144444444', '1115098765');
+
+-- INSERT RESERVAS
+INSERT INTO reserva(ID, ID_CANCHA, ID_CLIENTE, FECHA_INICIO_RESERVA, FECHA_FIN_RESERVA, VALOR_PAGO)
+VALUES (10, 10, 10, '2021-01-21 17:51', '2021-01-21 18:51', 95000);

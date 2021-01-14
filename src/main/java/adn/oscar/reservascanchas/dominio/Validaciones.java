@@ -1,10 +1,17 @@
 package adn.oscar.reservascanchas.dominio;
 
+import adn.oscar.reservascanchas.dominio.excepcion.FormatoFechaException;
 import adn.oscar.reservascanchas.dominio.excepcion.ValorInvalidoException;
 import adn.oscar.reservascanchas.dominio.excepcion.ValorNumericoException;
 import adn.oscar.reservascanchas.dominio.excepcion.ValorObligatorioException;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public final class Validaciones {
+
+    private static final String FORMATO_FECHA = "yyyy-MM-dd H:m";
 
     private Validaciones() {
     }
@@ -50,5 +57,17 @@ public final class Validaciones {
         if (valor < valorMinimo) {
             throw new ValorInvalidoException(mensaje);
         }
+    }
+
+    public static Date validarFormatoFecha(String fecha, String mensaje) {
+        if (fecha != null && !fecha.equals("")) {
+            try {
+                return new SimpleDateFormat(FORMATO_FECHA).parse(fecha);
+            } catch (ParseException parseException) {
+                throw new FormatoFechaException(mensaje);
+            }
+        }
+
+        return new Date();
     }
 }

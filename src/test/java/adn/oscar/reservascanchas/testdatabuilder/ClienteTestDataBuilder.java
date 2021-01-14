@@ -11,7 +11,7 @@ public class ClienteTestDataBuilder {
     private static final String TELEFONO_CLIENTE = "3158895616";
     private static final String CEDULA_CLIENTE = "123456789";
 
-    private final Long id;
+    private Long id;
     private String nombre;
     private String correo;
     private String telefono;
@@ -23,6 +23,11 @@ public class ClienteTestDataBuilder {
         this.correo = CORREO_CLIENTE;
         this.telefono = TELEFONO_CLIENTE;
         this.cedula = CEDULA_CLIENTE;
+    }
+
+    public ClienteTestDataBuilder conId(Long id) {
+        this.id = id;
+        return this;
     }
 
     public ClienteTestDataBuilder conNombre(String nombre) {

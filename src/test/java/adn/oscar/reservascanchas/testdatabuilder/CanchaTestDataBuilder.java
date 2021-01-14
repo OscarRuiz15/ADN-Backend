@@ -14,7 +14,7 @@ public class CanchaTestDataBuilder {
     private static final TipoCancha TIPO_CANCHA = TipoCancha.FUTBOL_DIEZ;
     private static final double PRECIO_RESERVA = 85000;
 
-    private final Long id;
+    private Long id;
     private String codigo;
     private String nombre;
     private String direccion;
@@ -30,6 +30,11 @@ public class CanchaTestDataBuilder {
         this.telefono = TELEFONO_CANCHA;
         this.tipoCancha = TIPO_CANCHA;
         this.precioReserva = PRECIO_RESERVA;
+    }
+
+    public CanchaTestDataBuilder conId(Long id) {
+        this.id = id;
+        return this;
     }
 
     public CanchaTestDataBuilder conCodigo(String codigo) {

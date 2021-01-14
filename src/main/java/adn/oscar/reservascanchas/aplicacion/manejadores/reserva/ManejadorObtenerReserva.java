@@ -16,7 +16,7 @@ public class ManejadorObtenerReserva {
     }
 
     @Transactional
-    public Reserva ejecutar(String codigoCancha, String cedulaCliente) {
-        return null;
+    public Reserva ejecutar(Long id) {
+        return this.servicioObtenerReserva.ejecutar(id);
     }
 }

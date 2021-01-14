@@ -4,6 +4,19 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name = "Reserva")
+@NamedQuery(name = "Reserva.obtenerTodos", query = "SELECT reservas FROM Reserva reservas")
+@NamedQuery(name = "Reserva.obtenerPorCodigoCanchaYCedulaClienteYFechaInicioReserva",
+        query = "SELECT reserva FROM Reserva reserva WHERE " +
+                "reserva.cancha.codigo = :codigoCancha " +
+                "AND " +
+                "reserva.cliente.cedula = :cedulaCliente " +
+                "AND " +
+                "reserva.fechaInicioReserva = :fechaInicioReserva")
+@NamedQuery(name = "Reserva.verificarDisponibilidadCancha",
+        query = "SELECT reserva FROM Reserva reserva WHERE " +
+                "reserva.fechaInicioReserva <= :fechaInicioReserva " +
+                "AND " +
+                "reserva.fechaFinReserva >= :fechaInicioReserva")
 public class ReservaEntity {
 
     @Id

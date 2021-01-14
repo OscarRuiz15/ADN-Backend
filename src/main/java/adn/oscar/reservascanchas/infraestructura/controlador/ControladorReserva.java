@@ -24,9 +24,8 @@ public class ControladorReserva {
         return this.manejadorCrearReserva.ejecutar(comandoReserva);
     }
 
-    @GetMapping("/{codigoCancha}/{cedulaCliente}")
-    public Reserva buscar(@PathVariable(name = "codigoCancha") String codigoCancha,
-                          @PathVariable(name = "cedulaCliente") String cedulaCliente) {
-        return this.manejadorObtenerReserva.ejecutar(codigoCancha, cedulaCliente);
+    @GetMapping("/{id}")
+    public Reserva buscar(@PathVariable(name = "id") Long id) {
+        return this.manejadorObtenerReserva.ejecutar(id);
     }
 }

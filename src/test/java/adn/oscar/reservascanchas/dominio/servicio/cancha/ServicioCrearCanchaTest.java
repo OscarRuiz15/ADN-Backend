@@ -11,15 +11,16 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
 public class ServicioCrearCanchaTest {
 
     @Mock
-    RepositorioCancha repositorioCancha;
+    private RepositorioCancha repositorioCancha;
 
     @InjectMocks
-    ServicioCrearCancha servicioCrearCancha;
+    private ServicioCrearCancha servicioCrearCancha;
 
     @Before
     public void setUp() {
@@ -53,6 +54,7 @@ public class ServicioCrearCanchaTest {
         try {
             // act
             servicioCrearCancha.ejecutar(cancha);
+            fail();
         } catch (CanchaException canchaException) {
             // assert
             assertEquals(ServicioCrearCancha.YA_EXISTE_UNA_CANCHA_REGISTRADA_CON_EL_MISMO_CODIGO,

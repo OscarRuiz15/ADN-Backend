@@ -16,10 +16,10 @@ import static org.mockito.Mockito.when;
 public class ServicioObtenerClienteTest {
 
     @Mock
-    RepositorioCliente repositorioCliente;
+    private RepositorioCliente repositorioCliente;
 
     @InjectMocks
-    ServicioObtenerCliente servicioObtenerCliente;
+    private ServicioObtenerCliente servicioObtenerCliente;
 
     @Before
     public void setUp() {

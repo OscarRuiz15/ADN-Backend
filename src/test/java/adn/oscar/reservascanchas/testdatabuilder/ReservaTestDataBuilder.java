@@ -14,11 +14,11 @@ public class ReservaTestDataBuilder {
     private static final String FECHA_FIN_RESERVA = "2021-01-13 10:00";
     private static final double VALOR_PAGO = CANCHA.getPrecioReserva();
 
-    private final Long id;
+    private Long id;
     private Cancha cancha;
     private Cliente cliente;
     private String fechaInicioReserva;
-    private final String fechaFinReserva;
+    private String fechaFinReserva;
     private final double valorPago;
 
     public ReservaTestDataBuilder() {
@@ -28,6 +28,11 @@ public class ReservaTestDataBuilder {
         this.fechaInicioReserva = FECHA_INICIO_RESERVA;
         this.fechaFinReserva = FECHA_FIN_RESERVA;
         this.valorPago = VALOR_PAGO;
+    }
+
+    public ReservaTestDataBuilder conId(Long id) {
+        this.id = id;
+        return this;
     }
 
     public ReservaTestDataBuilder conCancha(Cancha cancha) {
@@ -42,6 +47,11 @@ public class ReservaTestDataBuilder {
 
     public ReservaTestDataBuilder conFechaInicioReserva(String fechaInicioReserva) {
         this.fechaInicioReserva = fechaInicioReserva;
+        return this;
+    }
+
+    public ReservaTestDataBuilder conFechaFinReserva(String fechaFinReserva) {
+        this.fechaFinReserva = fechaFinReserva;
         return this;
     }
 
