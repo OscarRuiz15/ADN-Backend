@@ -60,7 +60,7 @@ public final class Validaciones {
     }
 
     public static Date validarFormatoFecha(String fecha, String mensaje) {
-        if (fecha != null && !fecha.equals("")) {
+        if (fecha != null && fecha.length() > 0) {
             try {
                 return new SimpleDateFormat(FORMATO_FECHA).parse(fecha);
             } catch (ParseException parseException) {

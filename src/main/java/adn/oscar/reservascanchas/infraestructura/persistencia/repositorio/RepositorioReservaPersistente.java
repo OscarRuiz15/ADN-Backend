@@ -17,11 +17,11 @@ public class RepositorioReservaPersistente implements RepositorioReserva {
 
     private final RepositorioReservaJPA repositorioReservaJPA;
     private final EntityManager entityManager;
-    private final static String OBTENER_POR_CANCHA_CLIENTE_FECHA = "Reserva.obtenerPorCodigoCanchaYCedulaClienteYFechaInicioReserva";
-    private final static String CODIGO_CANCHA = "codigoCancha";
-    private final static String CEDULA_CLIENTE = "cedulaCliente";
-    private final static String FECHA_INICIO_RESERVA = "fechaInicioReserva";
-    private final static String VERIFICAR_DISPONIBILIDAD_CANCHA = "Reserva.verificarDisponibilidadCancha";
+    private static final String OBTENER_POR_CANCHA_CLIENTE_FECHA = "Reserva.obtenerPorCodigoCanchaYCedulaClienteYFechaInicioReserva";
+    private static final String CODIGO_CANCHA = "codigoCancha";
+    private static final String CEDULA_CLIENTE = "cedulaCliente";
+    private static final String FECHA_INICIO_RESERVA = "fechaInicioReserva";
+    private static final String VERIFICAR_DISPONIBILIDAD_CANCHA = "Reserva.verificarDisponibilidadCancha";
 
     public RepositorioReservaPersistente(RepositorioReservaJPA repositorioReservaJPA, EntityManager entityManager) {
         this.repositorioReservaJPA = repositorioReservaJPA;
