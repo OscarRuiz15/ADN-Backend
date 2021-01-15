@@ -37,11 +37,7 @@ public class RepositorioReservaPersistente implements RepositorioReserva {
 
         List resultList = query.getResultList();
 
-        if (!resultList.isEmpty()) {
-            return ReservaBuilder.convertirADominio((ReservaEntity) resultList.get(0));
-        }
-
-        return null;
+        return !resultList.isEmpty() ? ReservaBuilder.convertirADominio((ReservaEntity) resultList.get(0)) : null;
     }
 
     @Override
@@ -57,11 +53,7 @@ public class RepositorioReservaPersistente implements RepositorioReserva {
 
         List resultList = query.getResultList();
 
-        if (!resultList.isEmpty()) {
-            return ReservaBuilder.convertirADominio((ReservaEntity) resultList.get(0));
-        }
-
-        return null;
+        return !resultList.isEmpty() ? ReservaBuilder.convertirADominio((ReservaEntity) resultList.get(0)) : null;
     }
 
     @Override
