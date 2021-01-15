@@ -4,10 +4,13 @@ import adn.oscar.reservascanchas.dominio.repositorio.RepositorioCancha;
 import adn.oscar.reservascanchas.dominio.repositorio.RepositorioCliente;
 import adn.oscar.reservascanchas.dominio.repositorio.RepositorioReserva;
 import adn.oscar.reservascanchas.dominio.servicio.cancha.ServicioCrearCancha;
+import adn.oscar.reservascanchas.dominio.servicio.cancha.ServicioListarCanchas;
 import adn.oscar.reservascanchas.dominio.servicio.cancha.ServicioObtenerCancha;
 import adn.oscar.reservascanchas.dominio.servicio.cliente.ServicioCrearCliente;
+import adn.oscar.reservascanchas.dominio.servicio.cliente.ServicioListarClientes;
 import adn.oscar.reservascanchas.dominio.servicio.cliente.ServicioObtenerCliente;
 import adn.oscar.reservascanchas.dominio.servicio.reserva.ServicioCrearReserva;
+import adn.oscar.reservascanchas.dominio.servicio.reserva.ServicioListarReservas;
 import adn.oscar.reservascanchas.dominio.servicio.reserva.ServicioObtenerReserva;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -43,5 +46,20 @@ public class BeanServicio {
     @Bean
     public ServicioObtenerReserva servicioObtenerReserva(RepositorioReserva repositorioReserva) {
         return new ServicioObtenerReserva(repositorioReserva);
+    }
+
+    @Bean
+    public ServicioListarCanchas servicioListarCanchas(RepositorioCancha repositorioCancha) {
+        return new ServicioListarCanchas(repositorioCancha);
+    }
+
+    @Bean
+    public ServicioListarClientes servicioListarClientes(RepositorioCliente repositorioCliente) {
+        return new ServicioListarClientes(repositorioCliente);
+    }
+
+    @Bean
+    public ServicioListarReservas servicioListarReservas(RepositorioReserva repositorioReserva) {
+        return new ServicioListarReservas(repositorioReserva);
     }
 }
