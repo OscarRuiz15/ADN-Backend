@@ -49,19 +49,19 @@ public class ReservaEntity {
     }
 
     public Date getFechaInicioReserva() {
-        return fechaInicioReserva;
+        return (Date) fechaInicioReserva.clone();
     }
 
     public void setFechaInicioReserva(Date fechaInicioReserva) {
-        this.fechaInicioReserva = fechaInicioReserva;
+        this.fechaInicioReserva = (Date) fechaInicioReserva.clone();
     }
 
     public Date getFechaFinReserva() {
-        return fechaFinReserva;
+        return (Date) fechaFinReserva.clone();
     }
 
     public void setFechaFinReserva(Date fechaFinReserva) {
-        this.fechaFinReserva = fechaFinReserva;
+        this.fechaFinReserva = (Date) fechaFinReserva.clone();
     }
 
     public double getValorPago() {

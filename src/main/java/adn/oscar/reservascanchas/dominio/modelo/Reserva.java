@@ -44,11 +44,11 @@ public class Reserva {
     }
 
     public Date getFechaInicioReserva() {
-        return fechaInicioReserva;
+        return (Date) fechaInicioReserva.clone();
     }
 
     public Date getFechaFinReserva() {
-        return fechaFinReserva;
+        return (Date) fechaFinReserva.clone();
     }
 
     public double getValorPago() {
@@ -56,7 +56,7 @@ public class Reserva {
     }
 
     public void setFechaFinReserva(Date fechaFinReserva) {
-        this.fechaFinReserva = fechaFinReserva;
+        this.fechaFinReserva = (Date) fechaFinReserva.clone();
     }
 
     public void setValorPago(double valorPago) {
