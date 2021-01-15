@@ -62,4 +62,21 @@ public class ControladorCanchaTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.tipoCancha").value(TipoCancha.FUTBOL_SEIS.toString()))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.precioReserva").value(95000));
     }
+
+
+    @Test
+    public void obtenerCanchas() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                .get("/canchas")
+                .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].id").value(3))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].codigo").value("C3"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].nombre").value("San Pedro"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].direccion").value("Calle 15 # 4 - 64"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].telefono").value("3165555555"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].tipoCancha").value("FUTBOL_NUEVE"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].precioReserva").value(97500));
+    }
 }

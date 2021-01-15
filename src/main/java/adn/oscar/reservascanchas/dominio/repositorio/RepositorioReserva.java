@@ -3,6 +3,7 @@ package adn.oscar.reservascanchas.dominio.repositorio;
 import adn.oscar.reservascanchas.dominio.modelo.Reserva;
 
 import java.util.Date;
+import java.util.List;
 
 public interface RepositorioReserva {
 
@@ -38,4 +39,9 @@ public interface RepositorioReserva {
      * @param id
      */
     Reserva obtenerPorId(Long id);
+
+    /**
+     * Obtener todos los registros del modelo reseva
+     */
+    List<Reserva> listaReservas();
 }

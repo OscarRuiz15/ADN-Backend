@@ -2,6 +2,8 @@ package adn.oscar.reservascanchas.dominio.repositorio;
 
 import adn.oscar.reservascanchas.dominio.modelo.Cancha;
 
+import java.util.List;
+
 public interface RepositorioCancha {
 
     /**
@@ -19,4 +21,9 @@ public interface RepositorioCancha {
      * @return Cancha
      */
     Cancha agregar(Cancha cancha);
+
+    /**
+     * Obtener todos los registros del modelo cancha
+     */
+    List<Cancha> listaCanchas();
 }

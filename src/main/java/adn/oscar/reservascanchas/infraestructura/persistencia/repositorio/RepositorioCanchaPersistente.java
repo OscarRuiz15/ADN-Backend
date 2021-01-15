@@ -7,6 +7,9 @@ import adn.oscar.reservascanchas.infraestructura.persistencia.entidad.CanchaEnti
 import adn.oscar.reservascanchas.infraestructura.persistencia.repositorio.jpa.RepositorioCanchaJPA;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Repository
 public class RepositorioCanchaPersistente implements RepositorioCancha {
 
@@ -26,5 +29,14 @@ public class RepositorioCanchaPersistente implements RepositorioCancha {
     public Cancha agregar(Cancha cancha) {
         CanchaEntity canchaEntity = repositorioCanchaJPA.save(CanchaBuilder.convertirAEntity(cancha));
         return CanchaBuilder.convertirADominio(canchaEntity);
+    }
+
+    @Override
+    public List<Cancha> listaCanchas() {
+        List<Cancha> canchas = new ArrayList<>();
+        repositorioCanchaJPA.findAll().forEach(canchaEntity ->
+                canchas.add(CanchaBuilder.convertirADominio(canchaEntity)));
+
+        return canchas;
     }
 }

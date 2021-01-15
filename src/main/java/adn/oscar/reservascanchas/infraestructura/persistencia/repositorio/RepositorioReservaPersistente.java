@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -60,5 +61,14 @@ public class RepositorioReservaPersistente implements RepositorioReserva {
     public Reserva obtenerPorId(Long id) {
         ReservaEntity reservaEntity = repositorioReservaJPA.findById(id).orElse(null);
         return ReservaBuilder.convertirADominio(reservaEntity);
+    }
+
+    @Override
+    public List<Reserva> listaReservas() {
+        List<Reserva> reservas = new ArrayList<>();
+        repositorioReservaJPA.findAll().forEach(reservaEntity ->
+                reservas.add(ReservaBuilder.convertirADominio(reservaEntity)));
+
+        return reservas;
     }
 }

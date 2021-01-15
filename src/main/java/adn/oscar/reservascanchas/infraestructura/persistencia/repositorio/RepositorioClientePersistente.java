@@ -7,6 +7,9 @@ import adn.oscar.reservascanchas.infraestructura.persistencia.entidad.ClienteEnt
 import adn.oscar.reservascanchas.infraestructura.persistencia.repositorio.jpa.RepositorioClienteJPA;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Repository
 public class RepositorioClientePersistente implements RepositorioCliente {
 
@@ -26,5 +29,14 @@ public class RepositorioClientePersistente implements RepositorioCliente {
     public Cliente agregar(Cliente cliente) {
         ClienteEntity clienteEntity = repositorioClienteJPA.save(ClienteBuilder.convertirAEntity(cliente));
         return ClienteBuilder.convertirADominio(clienteEntity);
+    }
+
+    @Override
+    public List<Cliente> listaClientes() {
+        List<Cliente> clientes = new ArrayList<>();
+        repositorioClienteJPA.findAll().forEach(clienteEntity ->
+                clientes.add(ClienteBuilder.convertirADominio(clienteEntity)));
+
+        return clientes;
     }
 }

@@ -57,4 +57,18 @@ public class ControladorClienteTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.telefono").value("3177340123"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.cedula").value("1112585695"));
     }
+
+    @Test
+    public void obtenerClientes() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                .get("/clientes")
+                .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$[3].id").value(20))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[3].nombre").value("Pedro Ignacio Ruiz"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[3].correo").value("pedroruiz@hotmail.com"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[3].telefono").value("3194827423"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[3].cedula").value("1114829483"));
+    }
 }

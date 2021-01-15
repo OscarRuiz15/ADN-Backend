@@ -2,9 +2,12 @@ package adn.oscar.reservascanchas.infraestructura.controlador;
 
 import adn.oscar.reservascanchas.aplicacion.comando.ComandoCliente;
 import adn.oscar.reservascanchas.aplicacion.manejadores.cliente.ManejadorCrearCliente;
+import adn.oscar.reservascanchas.aplicacion.manejadores.cliente.ManejadorListarClientes;
 import adn.oscar.reservascanchas.aplicacion.manejadores.cliente.ManejadorObtenerCliente;
 import adn.oscar.reservascanchas.dominio.modelo.Cliente;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/clientes")
@@ -13,10 +16,12 @@ public class ControladorCliente {
 
     private final ManejadorCrearCliente manejadorCrearCliente;
     private final ManejadorObtenerCliente manejadorObtenerCliente;
+    private final ManejadorListarClientes manejadorListarClientes;
 
-    public ControladorCliente(ManejadorCrearCliente manejadorCrearCliente, ManejadorObtenerCliente manejadorObtenerCliente) {
+    public ControladorCliente(ManejadorCrearCliente manejadorCrearCliente, ManejadorObtenerCliente manejadorObtenerCliente, ManejadorListarClientes manejadorListarClientes) {
         this.manejadorCrearCliente = manejadorCrearCliente;
         this.manejadorObtenerCliente = manejadorObtenerCliente;
+        this.manejadorListarClientes = manejadorListarClientes;
     }
 
     @PostMapping
@@ -27,5 +32,10 @@ public class ControladorCliente {
     @GetMapping("/{cedula}")
     public Cliente buscar(@PathVariable(name = "cedula") String cedula) {
         return this.manejadorObtenerCliente.ejecutar(cedula);
+    }
+
+    @GetMapping
+    public List<Cliente> listar() {
+        return this.manejadorListarClientes.ejecutar();
     }
 }

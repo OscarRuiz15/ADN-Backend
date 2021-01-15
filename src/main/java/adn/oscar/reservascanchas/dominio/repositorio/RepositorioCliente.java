@@ -2,6 +2,8 @@ package adn.oscar.reservascanchas.dominio.repositorio;
 
 import adn.oscar.reservascanchas.dominio.modelo.Cliente;
 
+import java.util.List;
+
 public interface RepositorioCliente {
 
     /**
@@ -19,4 +21,9 @@ public interface RepositorioCliente {
      * @return Cliente
      */
     Cliente agregar(Cliente cliente);
+
+    /**
+     * Obtener todos los registros del modelo cliente
+     */
+    List<Cliente> listaClientes();
 }

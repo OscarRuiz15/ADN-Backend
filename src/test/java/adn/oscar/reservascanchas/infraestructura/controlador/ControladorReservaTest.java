@@ -26,9 +26,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 public class ControladorReservaTest {
 
-    private final static long ID_ESPERADO = 11L;
-    private final static String FECHA_INICIO_RESERVA_TEST = "2021-01-15 17:53";
-    private final static String FECHA_FIN_RESERVA_ESPERADO_TEST = "2021-01-15 18:53";
+    private final static long ID_ESPERADO = 21L;
+    private final static String FECHA_INICIO_RESERVA_TEST = "2021-01-08 17:53";
+    private final static String FECHA_FIN_RESERVA_ESPERADO_TEST = "2021-01-08 18:53";
     private final static double VALOR_PAGAR_ESPERADO_TEST = 93500;
     private final static long ID_PRUEBA = 10L;
 
@@ -78,5 +78,20 @@ public class ControladorReservaTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.cancha.codigo").value("EDG47F"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.cliente.cedula").value("1112585695"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.valorPago").value(95000));
+    }
+
+    @Test
+    public void obtenerReservas() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                .get("/reservas")
+                .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].id").value(2))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].fechaInicioReserva").value("2021-01-18 22:30"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].fechaFinReserva").value("2021-01-18 23:30"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].cancha.codigo").value("C3"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].cliente.cedula").value("1115087378"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].valorPago").value(97500));
     }
 }
