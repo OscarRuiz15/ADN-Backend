@@ -8,9 +8,6 @@ import java.text.SimpleDateFormat;
 
 public final class ReservaBuilder {
 
-    private ReservaBuilder() {
-    }
-
     public static Reserva convertirADominio(ReservaEntity reservaEntity) {
         Reserva reserva = null;
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd H:m");

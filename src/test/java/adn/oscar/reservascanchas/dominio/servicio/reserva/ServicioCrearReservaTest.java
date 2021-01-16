@@ -15,8 +15,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 
 public class ServicioCrearReservaTest {
@@ -73,6 +72,20 @@ public class ServicioCrearReservaTest {
             assertEquals(ServicioCrearReserva.LA_CANCHA_YA_HA_SIDO_RESERVADA_POR_EL_CLIENTE_PARA_LA_MISMA_FECHA,
                     reservaException.getMessage());
         }
+    }
+
+    @Test
+    public void crearReservaPorMismoClienteEnMismaCanchaYMismaFechaNoExistente() {
+        // arrange
+        Reserva reserva = new ReservaTestDataBuilder().build();
+        when(repositorioReserva.obtenerPorCodigoCedulaYFecha(reserva.getCancha().getCodigo(),
+                reserva.getCliente().getCedula(), reserva.getFechaInicioReserva())).thenReturn(null);
+
+        // act
+        Reserva reservaPersistido = this.servicioCrearReserva.ejecutar(reserva);
+
+        // arrange
+        assertNull(reservaPersistido);
     }
 
     @Test
