@@ -9,8 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 
 public class ServicioObtenerReservaTest {
@@ -53,6 +52,21 @@ public class ServicioObtenerReservaTest {
     }
 
     @Test
+    public void obtenerReservaPorCodigoCedulaFechaExistente() {
+        // arrange
+        Reserva reserva = new ReservaTestDataBuilder().build();
+        when(repositorioReserva.agregar(reserva)).thenReturn(reserva);
+        when(repositorioReserva.obtenerPorCodigoCedulaYFecha(reserva.getCancha().getCodigo(),
+                reserva.getCliente().getCedula(), reserva.getFechaInicioReserva())).thenReturn(reserva);
+
+        // act
+        boolean existe = servicioObtenerReserva.ejecutar(reserva.getId()) != null;
+
+        // assert
+        assertFalse(existe);
+    }
+
+    @Test
     public void obtenerReservaPorCodigoCedulaFechaNoExistente() {
         // arrange
         Reserva reserva = new ReservaTestDataBuilder().build();
@@ -60,9 +74,9 @@ public class ServicioObtenerReservaTest {
                 reserva.getCliente().getCedula(), reserva.getFechaInicioReserva())).thenReturn(null);
 
         // act
-        boolean noExiste = servicioObtenerReserva.ejecutar(reserva.getId()) == null;
+        Reserva reservaPersistida = servicioObtenerReserva.ejecutar(reserva.getId());
 
         // assert
-        assertTrue(noExiste);
+        assertNull(reservaPersistida);
     }
 }

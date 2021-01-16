@@ -58,7 +58,7 @@ public class ServicioCrearReservaTest {
     }
 
     @Test
-    public void crearReservaYaExistente() {
+    public void crearReservaPorMismoClienteEnMismaCanchaYMismaFechaYaExistente() {
         // arrange
         Reserva reserva = new ReservaTestDataBuilder().build();
         when(repositorioReserva.obtenerPorCodigoCedulaYFecha(reserva.getCancha().getCodigo(),
