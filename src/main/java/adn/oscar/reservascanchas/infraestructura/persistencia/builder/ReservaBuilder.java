@@ -9,7 +9,6 @@ import java.text.SimpleDateFormat;
 public final class ReservaBuilder {
 
     private ReservaBuilder() {
-
     }
 
     public static Reserva convertirADominio(ReservaEntity reservaEntity) {

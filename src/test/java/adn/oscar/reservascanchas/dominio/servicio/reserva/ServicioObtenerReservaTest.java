@@ -51,4 +51,18 @@ public class ServicioObtenerReservaTest {
         // assert
         assertFalse(existe);
     }
+
+    @Test
+    public void obtenerReservaPorCodigoCedulaFechaNoExistente() {
+        // arrange
+        Reserva reserva = new ReservaTestDataBuilder().build();
+        when(repositorioReserva.obtenerPorCodigoCedulaYFecha(reserva.getCancha().getCodigo(),
+                reserva.getCliente().getCedula(), reserva.getFechaInicioReserva())).thenReturn(null);
+
+        // act
+        boolean noExiste = servicioObtenerReserva.ejecutar(reserva.getId()) == null;
+
+        // assert
+        assertTrue(noExiste);
+    }
 }
