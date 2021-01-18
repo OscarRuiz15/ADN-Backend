@@ -17,11 +17,11 @@ public class Cancha {
 
     private final Long id;
     private final String codigo;
-    private final String nombre;
-    private final String direccion;
-    private final String telefono;
-    private final TipoCancha tipoCancha;
-    private final double precioReserva;
+    private String nombre;
+    private String direccion;
+    private String telefono;
+    private TipoCancha tipoCancha;
+    private double precioReserva;
 
     public Cancha(Long id, String codigo, String nombre, String direccion, String telefono, TipoCancha tipoCancha, double precioReserva) {
         validarCadenaVacia(codigo, EL_CODIGO_DE_LA_CANCHA_NO_PUEDE_ESTAR_VACIO);
@@ -69,5 +69,25 @@ public class Cancha {
 
     public double getPrecioReserva() {
         return precioReserva;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public void setTipoCancha(TipoCancha tipoCancha) {
+        this.tipoCancha = tipoCancha;
+    }
+
+    public void setPrecioReserva(double precioReserva) {
+        this.precioReserva = precioReserva;
     }
 }
