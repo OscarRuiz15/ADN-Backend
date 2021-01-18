@@ -12,16 +12,12 @@ public final class ReservaBuilder {
     }
 
     public static Reserva convertirADominio(ReservaEntity reservaEntity) {
-        Reserva reserva = null;
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd H:m");
-        if (reservaEntity != null) {
-            String fechaInicioReserva = dateFormat.format(reservaEntity.getFechaInicioReserva());
-            String fechaFinReserva = dateFormat.format(reservaEntity.getFechaFinReserva());
-            reserva = new Reserva(reservaEntity.getId(), CanchaBuilder.convertirADominio(reservaEntity.getCancha()),
-                    ClienteBuilder.convertirADominio(reservaEntity.getCliente()),
-                    fechaInicioReserva, fechaFinReserva, reservaEntity.getValorPago());
-        }
-        return reserva;
+        String fechaInicioReserva = dateFormat.format(reservaEntity.getFechaInicioReserva());
+        String fechaFinReserva = dateFormat.format(reservaEntity.getFechaFinReserva());
+        return new Reserva(reservaEntity.getId(), CanchaBuilder.convertirADominio(reservaEntity.getCancha()),
+                ClienteBuilder.convertirADominio(reservaEntity.getCliente()),
+                fechaInicioReserva, fechaFinReserva, reservaEntity.getValorPago());
     }
 
     public static ReservaEntity convertirAEntity(Reserva reserva) {
