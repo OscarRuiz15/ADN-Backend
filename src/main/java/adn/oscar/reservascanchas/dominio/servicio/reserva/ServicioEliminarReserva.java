@@ -7,7 +7,7 @@ import adn.oscar.reservascanchas.dominio.repositorio.RepositorioReserva;
 public class ServicioEliminarReserva {
 
     private final RepositorioReserva repositorioReserva;
-    public final static String LA_RESERVA_A_ELIMINAR_NO_EXISTE = "La reserva a eliminar no existe";
+    public static final String LA_RESERVA_A_ELIMINAR_NO_EXISTE = "La reserva a eliminar no existe";
 
     public ServicioEliminarReserva(RepositorioReserva repositorioReserva) {
         this.repositorioReserva = repositorioReserva;

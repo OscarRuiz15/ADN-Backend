@@ -41,8 +41,9 @@ public class RepositorioCanchaPersistente implements RepositorioCancha {
     }
 
     @Override
-    public Cancha actualizar(Cancha cancha) {
-        CanchaEntity canchaEntity = repositorioCanchaJPA.save(CanchaBuilder.convertirAEntity(cancha));
-        return CanchaBuilder.convertirADominio(canchaEntity);
+    public Cancha actualizar(Cancha canchaActualizada) {
+        return CanchaBuilder.convertirADominio(
+                repositorioCanchaJPA.save(CanchaBuilder.convertirAEntity(canchaActualizada))
+        );
     }
 }

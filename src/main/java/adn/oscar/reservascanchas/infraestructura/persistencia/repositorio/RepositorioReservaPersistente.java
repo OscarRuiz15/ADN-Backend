@@ -75,11 +75,8 @@ public class RepositorioReservaPersistente implements RepositorioReserva {
     @Override
     public Reserva remover(Long id) {
         ReservaEntity reservaEntity = repositorioReservaJPA.findById(id).orElse(null);
-        Reserva reservaEliminada = null;
-        if (reservaEntity != null) {
-            reservaEliminada = ReservaBuilder.convertirADominio(reservaEntity);
-            repositorioReservaJPA.delete(reservaEntity);
-        }
+        Reserva reservaEliminada = ReservaBuilder.convertirADominio(reservaEntity);
+        repositorioReservaJPA.delete(reservaEntity);
         return reservaEliminada;
     }
 }

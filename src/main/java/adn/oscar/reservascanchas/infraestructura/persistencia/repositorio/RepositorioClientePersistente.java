@@ -41,8 +41,9 @@ public class RepositorioClientePersistente implements RepositorioCliente {
     }
 
     @Override
-    public Cliente actualizar(Cliente cliente) {
-        ClienteEntity clienteEntity = repositorioClienteJPA.save(ClienteBuilder.convertirAEntity(cliente));
-        return ClienteBuilder.convertirADominio(clienteEntity);
+    public Cliente actualizar(Cliente clienteActualizado) {
+        return ClienteBuilder.convertirADominio(
+                repositorioClienteJPA.save(ClienteBuilder.convertirAEntity(clienteActualizado))
+        );
     }
 }
