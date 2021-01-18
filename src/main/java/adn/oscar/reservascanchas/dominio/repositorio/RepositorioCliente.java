@@ -26,4 +26,12 @@ public interface RepositorioCliente {
      * Obtener todos los registros del modelo cliente
      */
     List<Cliente> listaClientes();
+
+    /**
+     * Actualizar un registro cliente
+     *
+     * @param cliente
+     * @return Cliente
+     */
+    Cliente actualizar(Cliente cliente);
 }

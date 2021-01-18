@@ -71,4 +71,15 @@ public class RepositorioReservaPersistente implements RepositorioReserva {
 
         return reservas;
     }
+
+    @Override
+    public Reserva remover(Long id) {
+        ReservaEntity reservaEntity = repositorioReservaJPA.findById(id).orElse(null);
+        Reserva reservaEliminada = null;
+        if (reservaEntity != null) {
+            reservaEliminada = ReservaBuilder.convertirADominio(reservaEntity);
+            repositorioReservaJPA.delete(reservaEntity);
+        }
+        return reservaEliminada;
+    }
 }

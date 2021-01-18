@@ -94,4 +94,20 @@ public class ControladorReservaTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].cliente.cedula").value("1115087378"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].valorPago").value(97500));
     }
+
+
+    @Test
+    public void eliminarReservaTest() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders
+                .delete("/reservas/{id}", ID_PRUEBA)
+                .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(ID_PRUEBA))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.fechaInicioReserva").value("2021-01-21 17:51"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.fechaFinReserva").value("2021-01-21 18:51"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.cancha.codigo").value("EDG47F"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.cliente.cedula").value("1112585695"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.valorPago").value(95000));
+    }
 }

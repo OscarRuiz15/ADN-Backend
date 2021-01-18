@@ -44,4 +44,12 @@ public interface RepositorioReserva {
      * Obtener todos los registros del modelo reseva
      */
     List<Reserva> listaReservas();
+
+    /**
+     * Eliminar un registro reserva
+     *
+     * @param id
+     * @return Reserva
+     */
+    Reserva remover(Long id);
 }

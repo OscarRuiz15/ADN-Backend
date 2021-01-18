@@ -26,4 +26,12 @@ public interface RepositorioCancha {
      * Obtener todos los registros del modelo cancha
      */
     List<Cancha> listaCanchas();
+
+    /**
+     * Actualizar un registro cliente
+     *
+     * @param cancha
+     * @return Cancha
+     */
+    Cancha actualizar(Cancha cancha);
 }

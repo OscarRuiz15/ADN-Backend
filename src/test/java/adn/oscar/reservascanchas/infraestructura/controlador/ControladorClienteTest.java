@@ -71,4 +71,27 @@ public class ControladorClienteTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$[3].telefono").value("3194827423"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[3].cedula").value("1114829483"));
     }
+
+    @Test
+    public void actualizarClienteTest() throws Exception {
+        ComandoCliente comandoCliente = new ClienteTestDataBuilder()
+                .conNombre("Juan Manuel Ignacio")
+                .conCorreo("juan-manuel@hotmail.com")
+                .conId(30L)
+                .conTelefono("2362814")
+                .conCedula("1115098765")
+                .buildComando();
+
+        mockMvc.perform(MockMvcRequestBuilders
+                .put("/clientes")
+                .content(objectMapper.writeValueAsString(comandoCliente))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.nombre").value(comandoCliente.getNombre()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.correo").value(comandoCliente.getCorreo()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.telefono").value(comandoCliente.getTelefono()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.cedula").value(comandoCliente.getCedula()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(comandoCliente.getId()));
+    }
 }

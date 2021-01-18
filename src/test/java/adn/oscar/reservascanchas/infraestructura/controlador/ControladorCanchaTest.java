@@ -79,4 +79,28 @@ public class ControladorCanchaTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].tipoCancha").value("FUTBOL_NUEVE"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].precioReserva").value(97500));
     }
+
+    @Test
+    public void actualizarCanchaTest() throws Exception {
+        ComandoCancha comandoCancha = new CanchaTestDataBuilder()
+                .conNombre("Nombre modificado")
+                .conDireccion("Direccion modificado")
+                .conId(20L)
+                .conTelefono("2362814")
+                .conPrecioReserva(157800)
+                .conCodigo("EBD67E")
+                .buildComando();
+
+        mockMvc.perform(MockMvcRequestBuilders
+                .put("/canchas")
+                .content(objectMapper.writeValueAsString(comandoCancha))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.nombre").value(comandoCancha.getNombre()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.direccion").value(comandoCancha.getDireccion()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.telefono").value(comandoCancha.getTelefono()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.precioReserva").value(comandoCancha.getPrecioReserva()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(comandoCancha.getId()));
+    }
 }
