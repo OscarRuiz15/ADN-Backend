@@ -13,9 +13,9 @@ public class Cliente {
     public static final String EL_NUMERO_DE_CEDULA_NO_ES_CORRECTO = "El numero de cedula no es correcto.";
 
     private final Long id;
-    private final String nombre;
-    private final String correo;
-    private final String telefono;
+    private String nombre;
+    private String correo;
+    private String telefono;
     private final String cedula;
 
     public Cliente(Long id, String nombre, String correo, String telefono, String cedula) {
@@ -52,5 +52,17 @@ public class Cliente {
 
     public String getCedula() {
         return cedula;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }
