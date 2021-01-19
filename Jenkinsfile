@@ -39,7 +39,7 @@ pipeline {
                         url: 'https://github.com/OscarRuiz15/ReservaCanchas---Backend.git'
 				    ]]
 				])
-				sh 'gradle --b ./build.gradle clean' //Asegurar no tener datos basura de compilaciones anteriores
+				sh 'gradle clean' //Asegurar no tener datos basura de compilaciones anteriores
 			}
 		}
 
