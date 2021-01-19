@@ -39,7 +39,7 @@ pipeline {
                         url: 'https://github.com/OscarRuiz15/ReservaCanchas---Backend.git'
 				    ]]
 				])
-				sh 'gradle clean' //Asegurar no tener datos basura de compilaciones anteriores
+				sh 'gradle --b ./build.gradle clean' //Asegurar no tener datos basura de compilaciones anteriores
 			}
 		}
 
@@ -63,9 +63,7 @@ pipeline {
 			steps{
 				echo '------------>Static Code Analysis<------------'
 				withSonarQubeEnv('Sonar') {
-					sh "${tool name: 'SonarScanner',
-					type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner
-					-Dproject.settings=sonar-project.properties"
+					sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
 				}
 			}
 		}
