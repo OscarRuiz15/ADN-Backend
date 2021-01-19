@@ -30,7 +30,7 @@ public class ServicioListarReservasTest {
     }
 
     @Test
-    public void listarCanchasTest() {
+    public void listarReservasTest() {
         // arrange
         Reserva reservaTest = new ReservaTestDataBuilder().build();
         when(repositorioReserva.listaReservas()).thenReturn(

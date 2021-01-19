@@ -1,30 +1,43 @@
 pipeline {
-	//where and how to execute the Pipeline
+	//Donde se va a ejecutar el Pipeline
 	agent {
 		label 'Slave_Induccion'
 	}
 
+    //Opciones específicas de Pipeline dentro del Pipeline
 	options {
 		buildDiscarder(logRotator(numToKeepStr: '5'))
 		disableConcurrentBuilds()
 	}
 
-	//A section defining tools to auto-install and put on the PATH
+	//Una sección que define las herramientas “preinstaladas” en Jenkins
 	tools {
-		jdk 'JDK8_Centos'
-		gradle 'Gradle4.5_Centos'
+		jdk 'JDK8_Centos' //Preinstalada en la Configuración del Master
+		gradle 'Gradle4.5_Centos' //Preinstalada en la Configuración del Master
 	}
 
 	triggers {
 		pollSCM('@hourly')
 	}
 
+//Aquí comienzan los “items” del Pipeline
 	stages{
 
 		stage('Checkout') {
 			steps{
 				echo "------------>Checkout<------------"
-				checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], gitTool: 'Git_Centos', submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHub_OscarRuiz15.hjs', url: 'https://github.com/OscarRuiz15/ReservaCanchas---Backend.git']]])
+				checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: 'main']],
+                    doGenerateSubmoduleConfigurations: false,
+                    extensions: [],
+                    gitTool: 'Git_Centos',
+                    submoduleCfg: [],
+                    userRemoteConfigs: [[
+                        credentialsId: 'GitHub_OscarRuiz15.hjs',
+                        url: 'https://github.com/OscarRuiz15/ReservaCanchas---Backend.git'
+				    ]]
+				])
 				sh 'gradle clean'
 			}
 		}
@@ -57,6 +70,8 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo "------------>Build<------------"
+				//Construir sin tarea test que se ejecutó previamente
+                sh 'gradle --b ./build.gradle build -x test'
 			}
 		}
 	}

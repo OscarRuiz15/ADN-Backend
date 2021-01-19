@@ -43,6 +43,10 @@ public class ServicioCrearReservaTest {
     public void crearReservaTest() {
         // arrange
         Reserva reserva = new ReservaTestDataBuilder().build();
+        when(repositorioReserva.obtenerPorCodigoCedulaYFecha(reserva.getCancha().getCodigo(),
+                reserva.getCliente().getCedula(), reserva.getFechaInicioReserva())).thenReturn(null);
+        when(repositorioReserva.verificarDisponibilidadCancha(reserva.getCancha().getCodigo(),
+                reserva.getFechaInicioReserva())).thenReturn(null);
         when(repositorioReserva.agregar(reserva)).thenReturn(reserva);
 
         // act
