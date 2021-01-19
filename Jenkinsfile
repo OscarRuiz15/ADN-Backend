@@ -6,8 +6,8 @@ pipeline {
 
     //Opciones específicas de Pipeline dentro del Pipeline
 	options {
-		buildDiscarder(logRotator(numToKeepStr: '5'))
-		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '5')) //Numero maximo de ejecuciones a guardar
+		disableConcurrentBuilds() //No permitir compilaciones simultaneas
 	}
 
 	//Una sección que define las herramientas “preinstaladas” en Jenkins
@@ -16,13 +16,14 @@ pipeline {
 		gradle 'Gradle4.5_Centos' //Preinstalada en la Configuración del Master
 	}
 
+    //Acciones automaticas
 	triggers {
-		pollSCM('@hourly')
+		pollSCM('@hourly') //Periodo de tiempo en el que revisa el repositorio para ejecutar pipeline
+		                    //cada vez que encuentre un cambio
 	}
 
-//Aquí comienzan los “items” del Pipeline
+    //Aquí comienzan los “items” del Pipeline
 	stages{
-
 		stage('Checkout') {
 			steps{
 				echo "------------>Checkout<------------"
@@ -38,7 +39,7 @@ pipeline {
                         url: 'https://github.com/OscarRuiz15/ReservaCanchas---Backend.git'
 				    ]]
 				])
-				sh 'gradle clean'
+				sh 'gradle --b ./build.gradle clean' //Asegurar no tener datos basura de compilaciones anteriores
 			}
 		}
 
@@ -53,7 +54,7 @@ pipeline {
 			steps{
 				echo "------------>Unit Tests<------------"
 				sh 'gradle --b ./build.gradle test'
-				junit '**/build/test-results/test/*.xml' //aggregate test results - JUnit
+				junit '**/build/test-results/test/*.xml' //Agregar los resultados del test a Junit
 			    sh 'gradle --b ./build.gradle jacocoTestReport'
 			}
 		}
@@ -62,7 +63,9 @@ pipeline {
 			steps{
 				echo '------------>Static Code Analysis<------------'
 				withSonarQubeEnv('Sonar') {
-					sh "${tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+					sh "${tool name: 'SonarScanner',
+					type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner
+					-Dproject.settings=sonar-project.properties"
 				}
 			}
 		}
@@ -70,8 +73,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo "------------>Build<------------"
-				//Construir sin tarea test que se ejecutó previamente
-                sh 'gradle --b ./build.gradle build -x test'
+                sh 'gradle --b ./build.gradle build -x test' //Construir sin tarea test que se ejecutó previamente
 			}
 		}
 	}
