@@ -1,6 +1,5 @@
 FROM openjdk:8
-ENV APP_HOME=/usr/app/
-WORKDIR $APP_HOME
-COPY build/libs/*.jar ./app.jar
-EXPOSE 8080
-CMD ["java","-jar","app.jar"]
+VOLUME /tmp
+ARG JAR_FILE
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
