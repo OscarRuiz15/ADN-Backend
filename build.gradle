@@ -4,7 +4,7 @@ plugins {
     id 'java'
     id "org.sonarqube" version "2.7"
     id 'jacoco'
-    //id 'com.palantir.docker' version '0.25.0'
+    id 'com.palantir.docker' version '0.25.0'
 }
 
 group = 'adn.oscar.reservascanchas'
@@ -15,12 +15,12 @@ repositories {
     mavenCentral()
 }
 
-/*docker {
+docker {
     name "reservascanchas"
     dockerfile file('Dockerfile')
     copySpec.from(jar).rename(".*", "app.jar")
     buildArgs(['JAR_FILE': "app.jar"])
-}*/
+}
 
 apply plugin: 'jacoco'
 dependencies {
