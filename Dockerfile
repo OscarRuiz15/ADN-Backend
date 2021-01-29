@@ -1,5 +1,4 @@
-FROM openjdk:8-jre-alpine
-VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM java:8
+ADD build/libs/*.jar app.jar
+EXPOSE 8888
+ENTRYPOINT ["java","-jar","app.jar"]
