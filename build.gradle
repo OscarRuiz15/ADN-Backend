@@ -18,8 +18,8 @@ repositories {
 docker {
     name "reservascanchas"
     dockerfile file('Dockerfile')
-    copySpec.from(jar).rename(".*", "reservascanchas-0.0.1.jar")
-    buildArgs(['JAR_FILE': "reservascanchas-0.0.1.jar"])
+    copySpec.from(jar).rename(".*", "app.jar")
+    buildArgs(['JAR_FILE': "app.jar"])
 }
 
 apply plugin: 'jacoco'
