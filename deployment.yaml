@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: java
-          image: oscarruiz15/reservascanchas-back:latest
+          image: oscarruiz15/reservascanchas:latest
           ports:
             - containerPort: 8080
 ---
