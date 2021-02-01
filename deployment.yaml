@@ -1,12 +1,12 @@
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: java-deployment
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: java
-  replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
@@ -14,20 +14,25 @@ spec:
     spec:
       containers:
         - name: java
-          image: oscarruiz15/reservascanchas:latest
+          image: oscarruiz15/reservascanchas:v4
           ports:
             - containerPort: 8080
+          env:
+            - name: MYSQL_SERVICE
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-connection-configmap
+                  key: db-connection-string
 ---
-# https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service
 kind: Service
 apiVersion: v1
 metadata:
   name: java-service
 spec:
+  type: LoadBalancer
   selector:
-    app: java
+    app: app
   ports:
     - protocol: TCP
       port: 8080
       targetPort: 8080
-  type: LoadBalancer
